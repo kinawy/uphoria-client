@@ -7,10 +7,12 @@ import {
 } from "react-router-dom"
 import "../styles/App.css"
 import BottomNav from "./BottomNav"
+import TopNav from './TopNav'
 
 const App = () => {
   return (
     <div className="App">
+      <TopNav />
       <header className="App-header">
         <h1>We are ready to go!</h1>
         
@@ -18,7 +20,6 @@ const App = () => {
       <Switch>
         {/* Routes to go here later */}
       </Switch>
-      <BottomNav />
     </div>
   )
 }

@@ -53,10 +53,6 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     minHeight: 200,
   },
-  backdrop: {
-    zIndex: theme.zIndex.drawer + 1,
-    color: "#fff",
-  },
   fab: {
     position: "absolute",
     bottom: theme.spacing(2),
@@ -72,7 +68,6 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const TopNav = () => {
-//   const [open, setOpen] = useState(false)
   const classes = useStyles()
   const theme = useTheme()
   const [value, setValue] = useState(0)
@@ -83,8 +78,8 @@ const TopNav = () => {
   const handleToggle = (e) => {
     console.log("This is triggering")
     console.log(searchEnabled)
-    
-
+    setSearchEnabled(false)
+    searchBar = <SearchBar />
   }
 
   const handleChange = (event, newValue) => {
@@ -114,16 +109,6 @@ const TopNav = () => {
       label: "Expand",
     },
   ]
-
-  //   const handleSearch = () => {
-  //     if (searching) {
-  //       return (
-  //         <div>
-
-  //         </div>
-  //       )
-  //     }
-  //   }
 
   return (
     <div className="header-tab">

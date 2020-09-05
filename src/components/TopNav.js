@@ -78,8 +78,13 @@ const TopNav = () => {
   const handleToggle = (e) => {
     console.log("This is triggering")
     console.log(searchEnabled)
-    setSearchEnabled(false)
-    searchBar = <SearchBar />
+    setSearchEnabled(!searchEnabled)
+  }
+
+  const handleSearchBar = () => {
+    if (searchEnabled === true) {
+        searchBar = <SearchBar />
+    }
   }
 
   const handleChange = (event, newValue) => {

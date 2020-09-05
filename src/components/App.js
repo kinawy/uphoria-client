@@ -6,16 +6,19 @@ import {
   Link
 } from "react-router-dom"
 import "../styles/App.css"
+import BottomNav from "./BottomNav"
 
 const App = () => {
   return (
     <div className="App">
       <header className="App-header">
         <h1>We are ready to go!</h1>
+        
       </header>
       <Switch>
         {/* Routes to go here later */}
       </Switch>
+      <BottomNav />
     </div>
   )
 }

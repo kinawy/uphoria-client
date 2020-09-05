@@ -3,11 +3,11 @@ import PropTypes from "prop-types"
 import clsx from "clsx"
 import { makeStyles, useTheme } from "@material-ui/core/styles"
 import AppBar from "@material-ui/core/AppBar"
-import SearchBar from './SearchBar'
-import SearchIcon from '@material-ui/icons/Search';
+import SearchBar from "./SearchBar"
+import SearchIcon from "@material-ui/icons/Search"
 import Tabs from "@material-ui/core/Tabs"
 import Tab from "@material-ui/core/Tab"
-
+import Backdrop from "@material-ui/core/Backdrop"
 import Typography from "@material-ui/core/Typography"
 import Zoom from "@material-ui/core/Zoom"
 import Fab from "@material-ui/core/Fab"
@@ -53,6 +53,10 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     minHeight: 200,
   },
+  backdrop: {
+    zIndex: theme.zIndex.drawer + 1,
+    color: "#fff",
+  },
   fab: {
     position: "absolute",
     bottom: theme.spacing(2),
@@ -68,10 +72,20 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const TopNav = () => {
+//   const [open, setOpen] = useState(false)
   const classes = useStyles()
   const theme = useTheme()
   const [value, setValue] = useState(0)
-  const [searching, setSearching ] = useState(false)
+  const [searchEnabled, setSearchEnabled] = useState(false)
+    let searchBar = ''
+  
+  
+  const handleToggle = (e) => {
+    console.log("This is triggering")
+    console.log(searchEnabled)
+    
+
+  }
 
   const handleChange = (event, newValue) => {
     setValue(newValue)
@@ -85,6 +99,7 @@ const TopNav = () => {
     enter: theme.transitions.duration.enteringScreen,
     exit: theme.transitions.duration.leavingScreen,
   }
+
   const fabs = [
     {
       color: "primary",
@@ -100,13 +115,15 @@ const TopNav = () => {
     },
   ]
 
-  const handleSearch = (e) => {
-      if(!searching) {
-      setSearching(true)
-      return <SearchBar />
+  //   const handleSearch = () => {
+  //     if (searching) {
+  //       return (
+  //         <div>
 
-    }
-  }
+  //         </div>
+  //       )
+  //     }
+  //   }
 
   return (
     <div className="header-tab">
@@ -120,11 +137,11 @@ const TopNav = () => {
           aria-label="action tabs example">
           <Tab label="Following" {...a11yProps(0)} />
           <Tab label="Hashtags" {...a11yProps(1)} />
-          <Tab label={<SearchIcon />} onClick={handleSearch}/>
+          <Tab label={<SearchIcon />} onClick={handleToggle} />
         </Tabs>
+        {searchBar}
       </AppBar>
     </div>
   )
 }
 export default TopNav
-

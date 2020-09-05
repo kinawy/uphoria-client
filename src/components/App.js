@@ -14,7 +14,7 @@ const App = () => {
   return (
     <div className="App">
       <TopNav />
-      <SearchBar />
+      {/* <SearchBar /> */}
       <header className="App-header">
         <h1>We are ready to go!</h1>
         

@@ -10,6 +10,8 @@ import BottomNav from "./BottomNav"
 import SearchBar from './SearchBar'
 import TopNav from './TopNav'
 
+import Video from './Video'
+
 const App = () => {
   return (
     <div className="App">
@@ -17,7 +19,6 @@ const App = () => {
       {/* <SearchBar /> */}
       <header className="App-header">
         <h1>We are ready to go!</h1>
-        
       </header>
       <Switch>
         {/* Routes to go here later */}

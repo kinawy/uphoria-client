@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import clsx from "clsx"
 import { makeStyles, useTheme } from "@material-ui/core/styles"
 import AppBar from "@material-ui/core/AppBar"
+import SearchIcon from '@material-ui/icons/Search';
 import Tabs from "@material-ui/core/Tabs"
 import Tab from "@material-ui/core/Tab"
 import TextField from '@material-ui/core/TextField';
@@ -109,16 +110,18 @@ const TopNav = () => {
           aria-label="action tabs example">
           <Tab label="Following" {...a11yProps(0)} />
           <Tab label="Hashtags" {...a11yProps(1)} />
-          <form className={classes.root} noValidate autoComplete="off">
-            <TextField
-              id="outlined-basic"
-              label="Outlined"
-              variant="outlined"
-            />
-          </form>
+          <Tab label={<SearchIcon />}/>
         </Tabs>
       </AppBar>
     </div>
   )
 }
 export default TopNav
+
+        //   <form className={classes.root} noValidate autoComplete="off">
+        //     <TextField
+        //       id="outlined-basic"
+        //       label="Outlined"
+        //       variant="outlined"
+        //     />
+        //   </form>

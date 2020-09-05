@@ -20,6 +20,7 @@ const App = () => {
       <Switch>
         {/* Routes to go here later */}
       </Switch>
+      <BottomNav />
     </div>
   )
 }

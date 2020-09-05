@@ -1,12 +1,13 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import clsx from "clsx"
 import { makeStyles, useTheme } from "@material-ui/core/styles"
 import AppBar from "@material-ui/core/AppBar"
+import SearchBar from './SearchBar'
 import SearchIcon from '@material-ui/icons/Search';
 import Tabs from "@material-ui/core/Tabs"
 import Tab from "@material-ui/core/Tab"
-import TextField from '@material-ui/core/TextField';
+
 import Typography from "@material-ui/core/Typography"
 import Zoom from "@material-ui/core/Zoom"
 import Fab from "@material-ui/core/Fab"
@@ -69,7 +70,8 @@ const useStyles = makeStyles((theme) => ({
 const TopNav = () => {
   const classes = useStyles()
   const theme = useTheme()
-  const [value, setValue] = React.useState(0)
+  const [value, setValue] = useState(0)
+  const [searching, setSearching ] = useState(false)
 
   const handleChange = (event, newValue) => {
     setValue(newValue)
@@ -98,6 +100,14 @@ const TopNav = () => {
     },
   ]
 
+  const handleSearch = (e) => {
+      if(!searching) {
+      setSearching(true)
+      return <SearchBar />
+
+    }
+  }
+
   return (
     <div className="header-tab">
       <AppBar position="static" color="default">
@@ -110,7 +120,7 @@ const TopNav = () => {
           aria-label="action tabs example">
           <Tab label="Following" {...a11yProps(0)} />
           <Tab label="Hashtags" {...a11yProps(1)} />
-          <Tab label={<SearchIcon />}/>
+          <Tab label={<SearchIcon />} onClick={handleSearch}/>
         </Tabs>
       </AppBar>
     </div>
@@ -118,10 +128,3 @@ const TopNav = () => {
 }
 export default TopNav
 
-        //   <form className={classes.root} noValidate autoComplete="off">
-        //     <TextField
-        //       id="outlined-basic"
-        //       label="Outlined"
-        //       variant="outlined"
-        //     />
-        //   </form>

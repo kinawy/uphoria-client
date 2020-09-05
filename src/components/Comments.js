@@ -18,7 +18,7 @@ export default function Comments() {
   const classes = useStyles()
 
   return (
-    <div className="like-btn">
+    <div className="comment-btn">
       <input accept="image/*" className={classes.input} id="icon-button-file" type="file"/>
       <label htmlFor="icon-button-file">
         <IconButton color="secondary" aria-label="upload picture" component="span">

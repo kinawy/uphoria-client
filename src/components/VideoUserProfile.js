@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export default function VideoUserProfile() {
+const VideoUserProfile = () => {
   const classes = useStyles()
 
   return (
@@ -26,3 +26,5 @@ export default function VideoUserProfile() {
     </div>
   )
 }
+
+export default VideoUserProfile

@@ -10,7 +10,7 @@ const Sidebar = () => {
     <>
       <VideoUserProfile/>
       <Likes/>
-      <Comments/>
+      {/*<Comments/>*/}
       <Shares/>
     </>
   )

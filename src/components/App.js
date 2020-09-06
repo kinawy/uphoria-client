@@ -11,6 +11,7 @@ import SearchBar from './SearchBar'
 import TopNav from './TopNav'
 
 import Video from './Video'
+import Sidebar from "./Sidebar"
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
       <Switch>
         {/* Routes to go here later */}
       </Switch>
+      <Sidebar/>
       <BottomNav />
     </div>
   )

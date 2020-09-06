@@ -1,9 +1,14 @@
+
+
+
+
 .App {
   background-color: rgb(7, 11, 68);
-  height: 100%;
-  width: 100%;
-  display: grid;
-  place-items: center;
+  height: 812px;
+  width: 375px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
 .user-videos {
@@ -26,5 +31,21 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-  
 
+.video-avi {
+  margin: 65% 15% 0 auto;
+}
+
+.like-btn {
+  margin: 10% 15% 0 auto;
+}
+
+.share-btn {
+  margin: 10% 15% 0 auto;
+}
+  
+.btm-nav {
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+}

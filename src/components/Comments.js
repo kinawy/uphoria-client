@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export default function Comments() {
+const Comments = () => {
   const classes = useStyles()
 
   return (
@@ -28,3 +28,5 @@ export default function Comments() {
     </div>
   )
 }
+
+export default Comments

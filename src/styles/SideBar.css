@@ -1,11 +1,65 @@
 .video-avi {
-    margin: 65% 15% 0 auto;
+    margin-left: 10%;
 }
 
 .like-btn {
-    margin: 10% 15% 0 auto;
+    margin-top: 40%;
 }
 
 .share-btn {
-    margin: 10% 15% 0 auto;
+    margin-top: 30%;
+}
+
+@media only screen and (max-device-width: 379px) {
+    .side-bar {
+        position: sticky;
+        margin: 90% 0 10% 75%;
+        width: 30px;
+    }
+}
+
+@media only screen and (min-device-width: 380px) {
+    .side-bar {
+        position: sticky;
+        margin: 90% 30% 10% 75%;
+        width: 30px;
+    }
+}
+
+@media only screen and (min-device-width: 520px) {
+    .side-bar {
+        position: sticky;
+        margin: 90% 0 10% 75%;
+        width: 30px;
+    }
+    .video-avi {
+        margin-left: 20%;
+    }
+
+    .like-btn {
+        margin-top: 50%;
+    }
+
+    .share-btn {
+        margin-top: 30%;
+    }
+}
+
+@media only screen and (min-device-width: 1366px) {
+    .side-bar {
+        position: sticky;
+        margin: 100% 0 10% 70%;
+        width: 30px;
+    }
+    .video-avi {
+        margin-left: 20%;
+    }
+
+    .like-btn {
+        margin-top: 90%;
+    }
+
+    .share-btn {
+        margin-top: 60%;
+    }
 }

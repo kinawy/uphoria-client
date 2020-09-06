@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export default function Shares() {
+const Shares = () => {
   const classes = useStyles()
 
   return (
@@ -28,3 +28,5 @@ export default function Shares() {
     </div>
   )
 }
+
+export default Shares

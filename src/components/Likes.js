@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export default function Likes() {
+const Likes = () => {
   const classes = useStyles()
 
   return (
@@ -28,3 +28,6 @@ export default function Likes() {
     </div>
   )
 }
+
+
+export default Likes

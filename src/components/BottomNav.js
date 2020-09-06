@@ -30,7 +30,7 @@ const BottomNav = () => {
         <BottomNavigationAction label="Profile" icon={<PermIdentityIcon />} />
       </BottomNavigation>
     </div>
-  )
+  )  
 }
 
 export default BottomNav

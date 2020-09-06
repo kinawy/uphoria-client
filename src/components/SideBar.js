@@ -8,12 +8,12 @@ import "../styles/SideBar.css"
 
 const SideBar = () => {
   return (
-    <>
+    <div className="side-bar">
       <VideoUserProfile/>
       <Likes/>
       {/*<Comments/>*/}
       <Shares/>
-    </>
+    </div>
   )
 }
 

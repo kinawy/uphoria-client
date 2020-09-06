@@ -7,8 +7,8 @@ import {
 } from "react-router-dom"
 import "../styles/App.css"
 import BottomNav from "./BottomNav"
-import SearchBar from "./SearchBar"
-import TopNav from "./TopNav"
+import SearchBar from './SearchBar'
+import TopNav from '../components/TopNav/TopNav'
 
 import Video from "./Video"
 import SideBar from "./SideBar"

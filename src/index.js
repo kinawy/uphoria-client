@@ -5,6 +5,8 @@ import "./styles/index.css"
 import App from "./components/App"
 import * as serviceWorker from "./serviceWorker"
 
+
+
 // Default Apollo Imports
 import {ApolloProvider} from "react-apollo"
 import {ApolloClient} from "apollo-client"

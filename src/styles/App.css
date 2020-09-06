@@ -1,14 +1,12 @@
-
-
-
-
 .App {
-  background-color: rgb(7, 11, 68);
+  background-color: rgb(118, 123, 206);
   height: 812px;
   width: 375px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  position: static;
+  /*bottom: 0;*/
 }
 
 .user-videos {
@@ -32,20 +30,48 @@
   scrollbar-width: none;
 }
 
-.video-avi {
-  margin: 65% 15% 0 auto;
-}
-
-.like-btn {
-  margin: 10% 15% 0 auto;
-}
-
-.share-btn {
-  margin: 10% 15% 0 auto;
-}
-  
+/* 1370 height is when the bottom nav bar starts to look bad */
 .btm-nav {
   margin: 0 auto;
-  position: absolute;
+  position: sticky;
   bottom: 0;
+
 }
+
+@media only screen and (min-device-width: 380px) and (max-device-width: 1360px) and (orientation:landscape) {
+  .App {
+    height: 812px;
+  }
+}
+
+@media only screen and (min-device-width: 1366px) and (max-device-width: 1920px) and (orientation:landscape) {
+  .App {
+    height: 812px;
+  }
+}
+
+
+
+/*@media only screen and (max-device-width: 379px) {*/
+/*  .App {*/
+/*    background-color: red;*/
+/*  }*/
+/*}*/
+
+/*@media only screen and (min-device-width: 380px) and (max-width: 519px){*/
+/*  .App {*/
+/*  background-color: dimgrey;*/
+/*  }*/
+/*}*/
+
+/*@media only screen and (min-width: 520px) and (max-width: 1365px) {*/
+/*  .side-bar {*/
+/*    background-color: #580126;*/
+/*  }*/
+/*}*/
+
+/*@media only screen and (min-width: 1366px) {*/
+/*  .side-bar {*/
+/*    background-color: #dea484;*/
+/*  }*/
+/*}*/

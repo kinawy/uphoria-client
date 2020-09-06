@@ -1,23 +1,13 @@
 import React from "react"
 import TextField from "@material-ui/core/TextField"
+import "../styles/SearchBar.css"
 
-import { makeStyles } from "@material-ui/core/styles"
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    "& > *": {
-      margin: theme.spacing(1),
-      width: "25ch",
-    },
-  },
-}))
 const SearchBar = (props) => {
-  const classes = useStyles()
 
   return (
-    <div>
-      <form className={classes.root} noValidate autoComplete="off">
-        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+    <div className="searchBar">
+      <form noValidate autoComplete="off">
+        <TextField id="outlined-basic" label="Search Videos" variant="outlined" />
       </form>
     </div>
   )

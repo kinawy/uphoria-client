@@ -17,11 +17,14 @@ const useStyles = makeStyles((theme) => ({
 const Shares = () => {
   const classes = useStyles()
 
+  const handleShare = (e) => {
+
+  }
+
   return (
     <div className="share-btn">
-      <input accept="image/*" className={classes.input} id="icon-button-file" type="file"/>
       <label htmlFor="icon-button-file">
-        <IconButton aria-label="upload picture" component="span">
+        <IconButton label="share-btn" component="span">
           <SendIcon/>
         </IconButton>
       </label>

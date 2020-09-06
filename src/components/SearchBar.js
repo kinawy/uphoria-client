@@ -14,3 +14,11 @@ const SearchBar = (props) => {
 }
 
 export default SearchBar
+
+// import SearchIcon from "@material-ui/icons/Search"
+// let searchBar = ""
+// if(value === 2) {
+//         searchBar = <SearchBar />
+//     }
+// <Tab label={<SearchIcon />} />
+// {searchBar}

@@ -8,7 +8,7 @@ import {
 import "../styles/App.css"
 import BottomNav from "./BottomNav"
 import SearchBar from './SearchBar'
-import TopNav from './TopNav'
+import TopNav from '../components/TopNav/TopNav'
 
 import Video from './Video'
 import Sidebar from "./Sidebar"

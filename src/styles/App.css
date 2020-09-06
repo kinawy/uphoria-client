@@ -1,7 +1,3 @@
-
-
-
-
 .App {
   background-color: rgb(7, 11, 68);
   height: 812px;
@@ -30,18 +26,6 @@
 .user-videos {
   -ms-overflow-style: none;
   scrollbar-width: none;
-}
-
-.video-avi {
-  margin: 65% 15% 0 auto;
-}
-
-.like-btn {
-  margin: 10% 15% 0 auto;
-}
-
-.share-btn {
-  margin: 10% 15% 0 auto;
 }
   
 .btm-nav {

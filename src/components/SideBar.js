@@ -3,9 +3,10 @@ import VideoUserProfile from "./VideoUserProfile"
 import Shares from "./Shares"
 import Likes from "./Likes"
 import Comments from "./Comments"
+import "../styles/SideBar.css"
 
 
-const Sidebar = () => {
+const SideBar = () => {
   return (
     <>
       <VideoUserProfile/>
@@ -16,4 +17,4 @@ const Sidebar = () => {
   )
 }
 
-export default Sidebar
+export default SideBar

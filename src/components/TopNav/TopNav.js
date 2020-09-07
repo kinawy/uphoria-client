@@ -1,8 +1,6 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import AppBar from "@material-ui/core/AppBar"
-import Following from "./Following"
-import Hashtags from "./Hashtags"
 import Tabs from "@material-ui/core/Tabs"
 import Tab from "@material-ui/core/Tab"
 import Typography from "@material-ui/core/Typography"
@@ -30,7 +28,7 @@ TabPanel.propTypes = {
   value: PropTypes.any.isRequired,
 }
 
-const TopNav = () => {
+const TopNav = (props) => {
   const [value, setValue] = useState(0)
 
   const handleChange = (event, newValue) => {
@@ -48,14 +46,9 @@ const TopNav = () => {
           variant="fullWidth"
           aria-label="action tabs example">
           <Tab label="Following" />
-          <Tab label="Hashtags" />
+              <Tab label="Hashtags" />
         </Tabs>
-        <TabPanel value={value} index={0}>
-        <Following />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <Hashtags />
-      </TabPanel>
+        
       </AppBar>
     </div>
   )

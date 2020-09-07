@@ -15,7 +15,7 @@ const Video = (props) => {
 	    <div className="videoPlayer">
 		    <TopNav />
 		    <SideBar />
-		    <VideoFooter username="@TimSpace" description="This is a video description"/>
+		    <VideoFooter username="@ExampleUsername" description="This is a video description"/>
 	    </div>
     )
 }

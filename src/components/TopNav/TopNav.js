@@ -47,11 +47,18 @@ const TopNav = () => {
           textColor="primary"
           variant="fullWidth"
           aria-label="action tabs example">
-          <Following />
-          <Hashtags />
+          <Tab label="Following" />
+          <Tab label="Hashtags" />
         </Tabs>
+        <TabPanel value={value} index={0}>
+        <Following />
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        <Hashtags />
+      </TabPanel>
       </AppBar>
     </div>
   )
 }
 export default TopNav
+

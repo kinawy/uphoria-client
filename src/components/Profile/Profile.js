@@ -4,12 +4,13 @@ import UserInfo from "./UserInfo"
 import "../../styles/Profile.css"
 
 const Profile = (props) => {
-  return(
-    <div className="profile-display">
-      <UserInfo/>
-      <VideoGrid/>
-    </div>
-  )
+	console.log("Profile Prop:", props.user)
+	return (
+		<div className="profile-display">
+			<UserInfo user={props.user}/>
+			<VideoGrid/>
+		</div>
+	)
 }
 
 

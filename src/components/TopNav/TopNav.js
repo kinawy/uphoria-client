@@ -1,8 +1,6 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import AppBar from "@material-ui/core/AppBar"
-import Following from "./Following"
-import Hashtags from "./Hashtags"
 import Tabs from "@material-ui/core/Tabs"
 import Tab from "@material-ui/core/Tab"
 import Typography from "@material-ui/core/Typography"
@@ -19,7 +17,7 @@ const TabPanel = (props) => {
       id={`action-tabpanel-${index}`}
       aria-labelledby={`action-tab-${index}`}
       {...other}>
-      <Box p={2}>{children}</Box>
+      {value === index && <Box p={3}>{children}</Box>}
     </Typography>
   )
 }
@@ -47,15 +45,10 @@ const TopNav = (props) => {
           textColor="primary"
           variant="fullWidth"
           aria-label="action tabs example">
-          <Tab label="Following"/>
-          <Tab label="Hashtags"/>
+          <Tab label="Following" />
+              <Tab label="Hashtags" />
         </Tabs>
-        <TabPanel value={value} index={0}>
-        <Following />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <Hashtags />
-      </TabPanel>
+        
       </AppBar>
     </div>
   )

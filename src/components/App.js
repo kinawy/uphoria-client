@@ -12,19 +12,18 @@ import TopNav from '../components/TopNav/TopNav'
 
 import Video from "./Video"
 import SideBar from "./SideBar"
+import Profile from "./Profile/Profile"
 
 const App = () => {
+
   return (
     <div className="App">
-      <TopNav/>
-      {/* <SearchBar /> */}
-      <header className="App-header">
-        <h1>We are ready to go!</h1>
-      </header>
       <Switch>
-        {/* Routes to go here later */}
+        <Route exact path="/" component={Video} />
+        {/*<Route path="/auth" component={Auth} />*/}
+        <Route path="/profile" component={Profile} />
+        {/*<Route path="/create" component={Create} />*/}
       </Switch>
-      <SideBar/>
       <BottomNav/>
     </div>
   )

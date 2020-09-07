@@ -14,16 +14,16 @@ import Auth from "./Auth/Auth"
 const App = () => {
 	let [currentUser, setCurrentUser] = useState("")
 
-	useEffect(() => {
-		let token
-		if (!localStorage.getItem("jwtToken")) {
-			//Do something later
-		} else {
-			token = jwt_decode(localStorage.getItem(AUTH_TOKEN))
-			console.log("DECODING PROCESS:", token)
-			setCurrentUser(token)
-		}
-	}, [])
+	// useEffect(() => {
+	// 	let token
+	// 	if (!localStorage.getItem("jwtToken")) {
+	// 		//Do something later
+	// 	} else {
+	// 		token = jwt_decode(localStorage.getItem(AUTH_TOKEN))
+	// 		console.log("DECODING PROCESS:", token)
+	// 		setCurrentUser(token)
+	// 	}
+	// }, [])
 
 	const nowCurrentUser = (userData) => {
 		console.log("New Current User Set:", userData)

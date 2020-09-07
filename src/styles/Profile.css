@@ -1,0 +1,36 @@
+body {
+    text-align: center;
+    background-color: #282c34;
+}
+
+.profile-display {
+    margin: 0 auto;
+    background-color: #686868;
+    width: 375px;
+}
+
+.circle {
+    /*border-radius: 50%;*/
+    height: 15vh;
+    width: 15vh;
+}
+
+.ig-url {
+    font-size: 15px;
+}
+
+.personal-url {
+    font-size: 15px;
+}
+
+.video-grid {
+    margin: 0 auto;
+    background-color: #aaa9a9;
+    width: 375px;
+    height: 50vh;
+}
+
+.video {
+    height: 150px;
+    width: auto;
+}

@@ -19,7 +19,7 @@ const TabPanel = (props) => {
       id={`action-tabpanel-${index}`}
       aria-labelledby={`action-tab-${index}`}
       {...other}>
-      {value === index && <Box p={3}>{children}</Box>}
+      <Box p={2}>{children}</Box>
     </Typography>
   )
 }
@@ -30,7 +30,7 @@ TabPanel.propTypes = {
   value: PropTypes.any.isRequired,
 }
 
-const TopNav = () => {
+const TopNav = (props) => {
   const [value, setValue] = useState(0)
 
   const handleChange = (event, newValue) => {
@@ -47,8 +47,8 @@ const TopNav = () => {
           textColor="primary"
           variant="fullWidth"
           aria-label="action tabs example">
-          <Tab label="Following" />
-          <Tab label="Hashtags" />
+          <Tab label="Following"/>
+          <Tab label="Hashtags"/>
         </Tabs>
         <TabPanel value={value} index={0}>
         <Following />

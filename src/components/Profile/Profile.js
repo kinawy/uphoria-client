@@ -1,7 +1,7 @@
 import React from "react"
 import VideoGrid from "./VideoGrid"
 import UserInfo from "./UserInfo"
-import "../../Profile.css"
+import "../../styles/Profile.css"
 
 const Profile = (props) => {
   return(

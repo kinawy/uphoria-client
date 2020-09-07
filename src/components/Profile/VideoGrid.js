@@ -22,19 +22,13 @@ const VideoGrid = (props) => {
     return (
       <React.Fragment>
         <Grid item xs={4}>
-          {/*<Paper className={classes.meme}>item*/}
           <img src="https://via.placeholder.com/200x350" className={classes.video}/>
-          {/*</Paper>*/}
         </Grid>
         <Grid item xs={4}>
-          {/*<Paper className={classes.meme}>*/}
           <img src="https://via.placeholder.com/200x350" className={classes.video}/>
-          {/*</Paper>*/}
         </Grid>
         <Grid item xs={4}>
-          {/*<Paper className={classes.meme}>*/}
           <img src="https://via.placeholder.com/200x350" className={classes.video}/>
-          {/*</Paper>*/}
         </Grid>
       </React.Fragment>
     )
@@ -43,13 +37,13 @@ const VideoGrid = (props) => {
   return (
     <div className={classes.root}>
       <Grid container spacing={1}>
-        <Grid container item xs={12} spacing={3}>
+        <Grid container item s={12} spacing={3}>
           <FormRow/>
         </Grid>
-        <Grid container item xs={12} spacing={3}>
+        <Grid container item s={12} spacing={3}>
           <FormRow/>
         </Grid>
-        <Grid container item xs={12} spacing={3}>
+        <Grid container item s={12} spacing={3}>
           <FormRow/>
         </Grid>
       </Grid>

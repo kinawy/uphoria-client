@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/VideoFooter.css';
 
 const VideoFooter = (props) => {
     console.log(props.username)
@@ -7,13 +6,9 @@ const VideoFooter = (props) => {
     return (
         <div className="videoFooter">
             <div className="videoFooter-text">
-                <h3>{props.username}</h3>
+                <p>{props.username}</p>
                 <p>{props.description}</p>
-            </div> 
-            <img  
-                className="videoFooter-record"
-                src="https://static.thenounproject.com/png/934821-200.png"
-            />
+            </div>
         </div>
     )
 }

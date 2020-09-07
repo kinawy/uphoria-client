@@ -12,24 +12,27 @@
 
 @media only screen and (max-device-width: 379px) {
     .side-bar {
-        position: sticky;
-        margin: 90% 0 10% 75%;
+        position: absolute;
+        bottom: 20%;
+        right: 10%;
         width: 30px;
     }
 }
 
 @media only screen and (min-device-width: 380px) {
     .side-bar {
-        position: sticky;
-        margin: 90% 30% 10% 75%;
+        position: absolute;
+        bottom: 30%;
+        right: 10%;
         width: 30px;
     }
 }
 
 @media only screen and (min-device-width: 520px) {
     .side-bar {
-        position: sticky;
-        margin: 90% 0 10% 75%;
+        position: absolute;
+        bottom: 30%;
+        right: 10%;
         width: 30px;
     }
     .video-avi {
@@ -47,8 +50,9 @@
 
 @media only screen and (min-device-width: 1366px) {
     .side-bar {
-        position: sticky;
-        margin: 100% 0 10% 70%;
+        position: absolute;
+        bottom: 30%;
+        right: 10%;
         width: 30px;
     }
     .video-avi {

@@ -12,6 +12,7 @@ import Video from "./Video"
 import Profile from "./Profile/Profile"
 import Auth from "./Auth/Auth"
 import Logout from "./Logout/Logout"
+import Upload from "./Upload/Upload"
 
 const App = () => {
 	let [currentUser, setCurrentUser] = useState("")
@@ -46,8 +47,8 @@ const App = () => {
 				<Route exact path="/" component={Video}/>
 				<Route path="/auth" render={(props) => <Auth {...props} nowCurrentUser={nowCurrentUser}
 				                                            user={currentUser}/>}/>
-				<Route path="/profile" render={(props) => <Profile {...props} user={currentUser} handleLogout={handleLogout}/>}/>
-				{/*<Route path="/create" component={Create} />*/}
+				<Route path="/profile" render={(props) => <Profile {...props} user={currentUser}  handleLogout={handleLogout} />}/>
+				<Route path="/create" component={Upload} />
 			</Switch>
 			<BottomNav/>
 		</div>

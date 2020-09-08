@@ -10,6 +10,7 @@ import {AUTH_TOKEN} from "../auth/constant"
 import Video from "./Video"
 import Profile from "./Profile/Profile"
 import Auth from "./Auth/Auth"
+import Logout from "./Logout/Logout"
 
 const App = () => {
 	let [currentUser, setCurrentUser] = useState("")
@@ -39,6 +40,7 @@ const App = () => {
 
 	return (
 		<div className="App">
+			<Logout handleLogout={handleLogout}/>
 			<Switch>
 				<Route exact path="/" component={Video}/>
 				<Route path="/auth" render={(props) => <Auth {...props} nowCurrentUser={nowCurrentUser}

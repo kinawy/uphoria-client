@@ -13,6 +13,7 @@ const Logout = (props) => {
 
   if (!clearToken) {
   return <button onClick={props.handleLogout}>Log-out</button>
+
   }
     return <Redirect to="/auth"/>
 }

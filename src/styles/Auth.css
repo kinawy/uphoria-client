@@ -1,7 +1,16 @@
 .auth-page {
     /*background-color: hotpink;*/
+    padding-top: 30px;
     color: black;
     height: 95vh;
+    
+}
+.auth-page button {
+    width: 50%;
+}
+
+.btn-group {
+    padding-bottom: 30px;
 }
 
 #standard-text-input {

@@ -43,10 +43,12 @@ const Login = (props) => {
 	if (props.user) return <Redirect to="/" user={props.user}/>
 
 	return (
+		<div className="login-form">
+			Log into your account below
 		<form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
 
 			<div>
-				<input
+				Email<input
 					type="text"
 					required
 					id="filled-required"
@@ -56,7 +58,7 @@ const Login = (props) => {
 						setEmail(e.target.value)
 					}}
 				/>
-				<input
+				Password<input
 					type="password"
 					required
 					id="filled-password-input"
@@ -79,6 +81,7 @@ const Login = (props) => {
 				</Mutation>
 			</div>
 		</form>
+			</div>
 	)
 }
 

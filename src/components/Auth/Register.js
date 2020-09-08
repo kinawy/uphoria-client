@@ -48,9 +48,11 @@ const Register = (props) => {
 	if (redirect) return <Redirect to="/auth"/>
 
 	return (
+		<div className="register-form">
+			Register your account below:
 		<form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
 			<div>
-				<input
+				Username<input
 					required
 					id="standard-text-input"
 					label="Username"
@@ -60,7 +62,7 @@ const Register = (props) => {
 						setUsername(e.target.value)
 					}}
 				/>
-				<input
+				Email<input
 					required
 					id="standard-text-input"
 					label="Email"
@@ -70,7 +72,7 @@ const Register = (props) => {
 						setEmail(e.target.value)
 					}}
 				/>
-				<input
+				Name<input
 					required
 					id="standard-text-input"
 					label="name"
@@ -80,7 +82,7 @@ const Register = (props) => {
 						setName(e.target.value)
 					}}
 				/>
-				<input
+				Birthday<input
 					required
 					id="standard-number"
 					label="Birthdate"
@@ -93,7 +95,7 @@ const Register = (props) => {
 						setBirthday(e.target.value)
 					}}
 				/>
-				<input
+				Password<input
 					required
 					id="standard-email-input"
 					label="Password"
@@ -103,7 +105,7 @@ const Register = (props) => {
 						setPassword(e.target.value)
 					}}
 				/>
-				<input
+				Confirm Paswword<input
 					required
 					id="standard-password-input"
 					label="Confirm Password"
@@ -125,11 +127,12 @@ const Register = (props) => {
 							}
 						}
 						return (
-							<button type="submit" className="btn btn-primary float-right" onClick={checkPassword}>Submit</button>)
+							<button type="submit" className="btn float-right" onClick={checkPassword}>Submit</button>)
 					}}
 				</Mutation>
 			</div>
 		</form>
+			</div>
 	)
 }
 

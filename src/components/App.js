@@ -16,7 +16,7 @@ const App = () => {
 
 	useEffect(() => {
 		let token
-		if (!localStorage.getItem("jwtToken")) {
+		if (!localStorage.getItem(AUTH_TOKEN)) {
 			//Do something later
 		} else {
 			token = jwt_decode(localStorage.getItem(AUTH_TOKEN))

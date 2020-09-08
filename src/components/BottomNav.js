@@ -11,7 +11,7 @@ import "../styles/BottomNav.css"
 const useStyles = makeStyles({
 	root: {
 		width: "100%",
-		position: "fixed",
+		height: "100%",
 		bottom: 0,
 	},
 })
@@ -21,6 +21,7 @@ const BottomNav = () => {
 	const [value, setValue] = React.useState("home")
 
 	return (
+		<div className="btm-nav">
 		<BottomNavigation
 			value={value}
 			onChange={(event, newValue) => {
@@ -32,6 +33,7 @@ const BottomNav = () => {
 			<BottomNavigationAction value="upload" component={Link} to="/create" label="Upload" icon={<AddCircleIcon/>}/>
 			<BottomNavigationAction value="profile" component={Link} to="/profile" label="Profile" icon={<PermIdentityIcon/>}/>
 		</BottomNavigation>
+		</div>
 	)
 }
 

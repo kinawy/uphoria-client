@@ -49,7 +49,7 @@ const Register = (props) => {
 
 	return (
 		<div className="register-form">
-			Register your account below:
+			{/* <h5>Register your account below:</h5> */}
 		<form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
 			<div>
 				Username<input

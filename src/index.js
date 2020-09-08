@@ -5,7 +5,7 @@ import "./styles/index.css"
 import App from "./components/App"
 import * as serviceWorker from "./serviceWorker"
 
-import {AUTH_TOKEN} from "../auth/constant"
+import {AUTH_TOKEN} from "./auth/constant"
 
 // Default Apollo Imports
 import {ApolloProvider} from "react-apollo"

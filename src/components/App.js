@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from "react"
 import {
 	Switch,
-	Route,
+  Route,
+  Redirect
 } from "react-router-dom"
 import "../styles/App.css"
 import BottomNav from "./BottomNav"
@@ -35,17 +36,17 @@ const App = () => {
 		if (localStorage.getItem(AUTH_TOKEN)) {
 			localStorage.removeItem(AUTH_TOKEN)
 			setCurrentUser(null)
-		}
+    }
+    return <Redirect to="/auth"/>
 	}
 
 	return (
 		<div className="App">
-			<Logout handleLogout={handleLogout}/>
 			<Switch>
 				<Route exact path="/" component={Video}/>
 				<Route path="/auth" render={(props) => <Auth {...props} nowCurrentUser={nowCurrentUser}
 				                                            user={currentUser}/>}/>
-				<Route path="/profile" render={(props) => <Profile {...props} user={currentUser}/>}/>
+				<Route path="/profile" render={(props) => <Profile {...props} user={currentUser} handleLogout={handleLogout}/>}/>
 				{/*<Route path="/create" component={Create} />*/}
 			</Switch>
 			<BottomNav/>

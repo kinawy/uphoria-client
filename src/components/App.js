@@ -12,6 +12,7 @@ import Profile from "./Profile/Profile"
 import Auth from "./Auth/Auth"
 import Logout from "./Logout/Logout"
 import Upload from "./Upload/Upload"
+import Loading from "./Loading/Loading"
 
 const App = () => {
 	let [currentUser, setCurrentUser] = useState("")
@@ -38,6 +39,7 @@ const App = () => {
 			setCurrentUser(null)
 		}
 	}
+
 
 	return (
 		<div className="App">

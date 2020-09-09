@@ -45,21 +45,21 @@ const Login = (props) => {
 		<form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
 
 			<div>
-				Email<input
+				<input
 					type="text"
 					required
 					id="filled-required"
-					label="Email"
+					placeholder="Email"
 					value={email}
 					onChange={(e) => {
 						setEmail(e.target.value)
 					}}
 				/>
-				Password<input
+				<input
 					type="password"
 					required
 					id="filled-password-input"
-					label="Password"
+					placeholder="Password"
 					value={password}
 					autoComplete="current-password"
 					onChange={(e) => {

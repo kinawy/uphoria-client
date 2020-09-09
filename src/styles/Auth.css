@@ -1,3 +1,11 @@
+.auth-page {
+    background-color: black;
+    color: white;
+    padding: 0 0 10vh;
+}
+.appInfo {
+    margin: 5vh 10vh;
+}
 .logoDiv{
     margin-top: 20px;
     margin-bottom: 30px;
@@ -5,32 +13,23 @@
     justify-content: center;
 }
 .logoDiv img {
-    margin: 20px;
-    filter: invert(1);  
-    height: 200px;
-    
-}
-
-.auth-page {
-    /*background-color: hotpink;*/
-    
-    color: black;
-    height: 95vh;
-    
+    height: 25vh;
 }
 .auth-page button {
-    width: 50%;
+    width: 45%;
+    background-color: #36064c;
 }
 
+.auth-page button:hover {
+    background-color: #66058c !important;
+}
+
+.auth-page .toggleBtn {
+    margin: 0 0.9vh;
+}
 .btn-group {
     padding-bottom: 30px;
 }
-
 .authFormDiv {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-#standard-text-input {
-    /*color: black;*/
+    padding: 0 4vh;
 }

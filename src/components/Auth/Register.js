@@ -9,6 +9,12 @@ const useStyles = makeStyles((theme) => ({
 		"& .MuiTextField-root": {
 			margin: theme.spacing(1),
 			width: "25ch"
+		},
+		"& input": {
+			color: "white"
+		},
+		"& input:focus": {
+			borderColor: "#66058c !important"
 		}
 	}
 }))

@@ -1,6 +1,5 @@
 import React, {useState} from "react"
 import {Mutation} from "react-apollo"
-import {Redirect} from "react-router-dom"
 import gql from "graphql-tag"
 import jwt_decode from "jwt-decode"
 import {AUTH_TOKEN} from "../../auth/constant"
@@ -40,29 +39,27 @@ const Login = (props) => {
 		props.nowCurrentUser(decoded)
 	}
 
-	if (props.user) return <Redirect to="/" user={props.user}/>
-
 	return (
 		<div className="login-form">
-			Log into your account below
+			{/* <h5>Log into your account below</h5> */}
 		<form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
 
 			<div>
-				Email<input
+				<input
 					type="text"
 					required
 					id="filled-required"
-					label="Email"
+					placeholder="Email"
 					value={email}
 					onChange={(e) => {
 						setEmail(e.target.value)
 					}}
 				/>
-				Password<input
+				<input
 					type="password"
 					required
 					id="filled-password-input"
-					label="Password"
+					placeholder="Password"
 					value={password}
 					autoComplete="current-password"
 					onChange={(e) => {

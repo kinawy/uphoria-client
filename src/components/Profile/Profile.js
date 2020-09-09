@@ -48,7 +48,7 @@ const Profile = (props) => {
 					return (
 						<>
 							<UserInfo user={{...data.user}}/>
-							<VideoGrid videos={data.videos}/>
+							<VideoGrid videos={data.user.videos}/>
 						</>
 					)
 				}}

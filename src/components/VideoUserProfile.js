@@ -18,12 +18,12 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const VideoUserProfile = () => {
+const VideoUserProfile = (props) => {
   const classes = useStyles()
 
   return (
     <div className='video-avi'>
-	    <Link to={{ pathname:"/profile", userId: "5f55a694f6b7026bcdb42353"}}>
+	    <Link to={{ pathname:"/profile", userId: props.userId}}>
 	      <Avatar alt="Remy Sharp"
 	              src="https://www.gamersdecide.com/sites/default/files/styles/news_images/public/ezgif.com-gif-maker.jpg"
 	              className={classes.large}/>

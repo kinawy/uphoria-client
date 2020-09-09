@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const Shares = () => {
+const Shares = (props) => {
   const classes = useStyles()
 
   const handleShare = (e) => {
@@ -28,6 +28,7 @@ const Shares = () => {
           <SendIcon/>
         </IconButton>
       </label>
+	    {props.shares}
     </div>
   )
 }

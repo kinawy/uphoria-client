@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const Likes = () => {
+const Likes = (props) => {
   const [color, setColor] = useState("primary")
 
   const classes = useStyles()
@@ -35,6 +35,7 @@ const Likes = () => {
         <IconButton color={color} label="like-btn" component="span" onClick={toggleClick}>
           <FavoriteIcon/>
         </IconButton>
+	      {props.likes}
       </label>
     </div>
   )

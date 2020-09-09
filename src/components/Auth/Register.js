@@ -52,42 +52,42 @@ const Register = (props) => {
 			{/* <h5>Register your account below:</h5> */}
 		<form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
 			<div>
-				Username<input
+				<input
 					required
 					id="standard-text-input"
-					label="Username"
+					placeholder="Username"
 					type="text"
 					value={username}
 					onChange={(e) => {
 						setUsername(e.target.value)
 					}}
 				/>
-				Email<input
+				<input
 					required
 					id="standard-text-input"
-					label="Email"
+					placeholder="Email"
 					type="email"
 					value={email}
 					onChange={(e) => {
 						setEmail(e.target.value)
 					}}
 				/>
-				Name<input
+				<input
 					required
 					id="standard-text-input"
-					label="name"
+					placeholder="Name"
 					type="text"
 					value={name}
 					onChange={(e) => {
 						setName(e.target.value)
 					}}
 				/>
-				Birthday<input
+				<input
 					required
 					id="standard-number"
-					label="Birthdate"
+					placeholder="Birthdate"
 					type="date"
-					InputLabelProps={{
+					InputplaceholderProps={{
 						shrink: true
 					}}
 					value={birthday}
@@ -95,20 +95,20 @@ const Register = (props) => {
 						setBirthday(e.target.value)
 					}}
 				/>
-				Password<input
+				<input
 					required
 					id="standard-email-input"
-					label="Password"
+					placeholder="Password"
 					type="password"
 					value={password}
 					onChange={(e) => {
 						setPassword(e.target.value)
 					}}
 				/>
-				Confirm Paswword<input
+				<input
 					required
 					id="standard-password-input"
-					label="Confirm Password"
+					placeholder="Confirm Password"
 					type="password"
 					value={confirmPassword}
 					onChange={(e) => {

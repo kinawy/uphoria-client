@@ -5,9 +5,7 @@ import SideBar from "./SideBar"
 import TopNav from "./TopNav/TopNav"
 import gql from "graphql-tag"
 import {Query} from "react-apollo"
-import UserInfo from "./Profile/UserInfo"
-import VideoGrid from "./Profile/VideoGrid"
-
+import { useSwipeable, Swipeable } from 'react-swipeable'
 
 const Video = (props) => {
 
@@ -36,7 +34,7 @@ const Video = (props) => {
 
 					let videos = data.videos.map(video => {
 						return (
-							<>
+							<div className="Video-Container">
 								<SideBar userId={video.userId.id} likes={video.likes} shares={video.shares}/>
 								<VideoFooter username={video.userId.username} description={video.description}/>
 								<video
@@ -45,7 +43,7 @@ const Video = (props) => {
 									autoPlay={true}
 									loop={true}
 								/>
-							</>
+							</div>
 						)
 					})
 

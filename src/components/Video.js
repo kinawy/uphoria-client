@@ -13,6 +13,7 @@ const Video = (props) => {
   const queryVideos = gql`
     {
       videos {
+	      id
         description
         userId {
           id
@@ -37,6 +38,7 @@ const Video = (props) => {
             return (
               <div className="Video-Container">
                 <SideBar
+	                videoId={video.id}
                   userId={video.userId.id}
                   likes={video.likes}
                   shares={video.shares}

@@ -10,6 +10,16 @@
     margin-top: 30%;
 }
 
+.side-bar p {
+    margin-top: -1.7vh;
+    padding-left: 1.8vh;
+    text-align: center;
+    font-weight: bold;
+    color: white !important;
+}
+
+
+
 @media only screen and (max-device-width: 375px) {
     .side-bar {
         position: absolute;
@@ -61,25 +71,3 @@
         margin-top: 30%;
     }
 }
-
-
-
-/*@media only screen and (min-device-width: 1366px)v {*/
-/*    .side-bar {*/
-/*        position: absolute;*/
-/*        bottom: 30%;*/
-/*        !*right: 90%;*!*/
-/*        width: 30px;*/
-/*    }*/
-/*    .video-avi {*/
-/*        margin-left: 20%;*/
-/*    }*/
-
-/*    .like-btn {*/
-/*        margin-top: 90%;*/
-/*    }*/
-
-/*    .share-btn {*/
-/*        margin-top: 60%;*/
-/*    }*/
-/*}*/

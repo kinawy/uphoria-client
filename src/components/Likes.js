@@ -16,13 +16,14 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Likes = (props) => {
-  const [color, setColor] = useState("primary")
+  const [color, setColor] = useState("grey")
 
   const classes = useStyles()
 
   const toggleClick = (e) => {
+  	props.handleLike()
     if (e.target.color === "secondary") {
-      e.target.color = "primary"
+      e.target.color = "grey"
     } else {
       e.target.color = "secondary"
     }
@@ -35,8 +36,8 @@ const Likes = (props) => {
         <IconButton color={color} label="like-btn" component="span" onClick={toggleClick}>
           <FavoriteIcon/>
         </IconButton>
-	      {props.likes}
       </label>
+	    <p>{props.likes}</p>
     </div>
   )
 }

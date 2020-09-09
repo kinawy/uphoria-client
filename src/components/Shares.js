@@ -17,18 +17,14 @@ const useStyles = makeStyles((theme) => ({
 const Shares = (props) => {
   const classes = useStyles()
 
-  const handleShare = (e) => {
-
-  }
-
   return (
     <div className="share-btn">
       <label htmlFor="icon-button-file">
-        <IconButton label="share-btn" component="span">
+        <IconButton label="share-btn" component="span" onClick={props.handleShare}>
           <SendIcon/>
         </IconButton>
       </label>
-	    {props.shares}
+	    <p>{props.shares}</p>
     </div>
   )
 }

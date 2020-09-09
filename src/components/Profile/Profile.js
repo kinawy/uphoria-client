@@ -32,6 +32,7 @@ const Profile = (props) => {
               }
               videos {
                   id
+				  videoUrl
               }
           }
       }

@@ -49,6 +49,7 @@ const Video = (props) => {
                   src={`https://res.cloudinary.com/agregis/video/upload/c_scale,g_south_west,l_logo_transparent_wvrps0,w_144/${video.videoUrl}.mp4`}
                   autoPlay={true}
                   loop={true}
+                  muted
                 />
               </>
             )

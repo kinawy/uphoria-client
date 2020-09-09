@@ -26,8 +26,13 @@ const useStyles = makeStyles((theme) => ({
 
 const VideoGrid = (props) => {
   const classes = useStyles()
+  
 
-  function FormRow() {
+  const FormRow = () => {
+    let getVideos = props.videos.map(video => {
+      
+    })
+
     return (
       <React.Fragment>
         <Grid className={classes.item} item xs={4} p={0} m={0}>

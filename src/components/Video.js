@@ -35,7 +35,7 @@ const Video = (props) => {
 
           let videos = data.videos.map((video) => {
             return (
-              <>
+              <div className="Video-Container">
                 <SideBar
                   userId={video.userId.id}
                   likes={video.likes}
@@ -52,7 +52,7 @@ const Video = (props) => {
                   loop={true}
                   muted
                 />
-              </>
+              </div>
             )
           })
 

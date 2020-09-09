@@ -44,6 +44,7 @@ const Profile = (props) => {
 			<Logout handleLogout={props.handleLogout}/>
 			<Query query={queryUserInfo} variables={{ id: userId }}>
 				{({ loading, error, data  }) => {
+					console.log(data)
 					if (loading) return "Loading...";
 					if (error) return `Query Failed: ${error}`;
 

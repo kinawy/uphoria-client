@@ -26,22 +26,24 @@ const useStyles = makeStyles((theme) => ({
 
 const VideoGrid = (props) => {
   const classes = useStyles()
-  let videos
+  let videos = []
 
   
 
   const FormRow = () => {
+    while(videos < props.videos.length) {
     let getVideos = props.videos.map(video => {
-      videos = {video}
+      videos.push(video)
       console.log(videos)
       return videos
     })
+  }
 
     return (
       <React.Fragment>
         <Grid className={classes.item} item xs={4} p={0} m={0}>
           <video
-              src={`https://res.cloudinary.com/agregis/video/upload/e_boomerang/eo_1/c_scale,g_south_west,l_logo_transparent_wvrps0,w_144/${videos.video.videoUrl}.mp4`}
+              src={`https://res.cloudinary.com/agregis/video/upload/e_boomerang/eo_1/c_scale,g_south_west,l_logo_transparent_wvrps0,w_144/${videos[0].videoUrl}.mp4`}
               autoPlay={true}
               loop={true}
               muted
@@ -50,7 +52,7 @@ const VideoGrid = (props) => {
         </Grid>
         <Grid className={classes.item} item xs={4} p={0} m={0}>
           <video
-              src={`https://res.cloudinary.com/agregis/video/upload/e_boomerang/eo_1/c_scale,g_south_west,l_logo_transparent_wvrps0,w_144/${videos.video.videoUrl}.mp4`}
+              src={`https://res.cloudinary.com/agregis/video/upload/e_boomerang/eo_1/c_scale,g_south_west,l_logo_transparent_wvrps0,w_144/${videos[1].videoUrl}.mp4`}
               autoPlay={true}
               loop={true}
               muted
@@ -59,7 +61,7 @@ const VideoGrid = (props) => {
         </Grid>
         <Grid className={classes.item} item xs={4} p={0} m={0}>
           <video
-              src={`https://res.cloudinary.com/agregis/video/upload/e_boomerang/eo_1/c_scale,g_south_west,l_logo_transparent_wvrps0,w_144/${videos.video.videoUrl}.mp4`}
+              src={`https://res.cloudinary.com/agregis/video/upload/e_boomerang/eo_1/c_scale,g_south_west,l_logo_transparent_wvrps0,w_144/${videos[1].videoUrl}.mp4`}
               autoPlay={true}
               loop={true}
               muted

@@ -48,7 +48,7 @@ const App = () => {
 				<Route path="/auth" render={(props) => <Auth {...props} nowCurrentUser={nowCurrentUser}
 				                                            user={currentUser}/>}/>
 				<Route path="/profile" render={(props) => <Profile {...props} user={currentUser}  handleLogout={handleLogout} />}/>
-				<Route path="/create" component={Upload} />
+				<Route path="/create" render={() => <Upload userId={currentUser._id}/> } />
 			</Switch>
 			<BottomNav/>
 		</div>

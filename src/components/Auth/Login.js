@@ -4,6 +4,7 @@ import gql from "graphql-tag"
 import jwt_decode from "jwt-decode"
 import {AUTH_TOKEN} from "../../auth/constant"
 import {makeStyles} from "@material-ui/core/styles"
+import Error from "../Error"
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -21,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const Login = (props) => {
+	const [error, setError] = useState(null)
 	const classes = useStyles()
 
 	const [email, setEmail] = useState("")
@@ -34,7 +36,13 @@ const Login = (props) => {
       }
 	`
 
+	const handleError = (error) => {
+		let errorComp = <Error errorMessage={error.message} />
+		setError(errorComp)
+	}
+
 	let handleSubmit = (e) => {
+		setError(null)
 		e.preventDefault()
 	}
 
@@ -47,7 +55,7 @@ const Login = (props) => {
 
 	return (
 		<div className="login-form">
-			{/* <h5>Log into your account below</h5> */}
+			{error}
 		<form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
 
 			<div>
@@ -76,6 +84,7 @@ const Login = (props) => {
 				<Mutation
 					mutation={LOGIN_MUTATION}
 					variables={{email, password}}
+					onError={error => handleError(error)}
 					onCompleted={data => confirm(data)}
 				>
 					{mutation => (

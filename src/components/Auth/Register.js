@@ -3,6 +3,7 @@ import {makeStyles} from "@material-ui/core/styles"
 import {Redirect} from "react-router-dom"
 import {Mutation} from "react-apollo"
 import gql from "graphql-tag"
+import Error from "../Error"
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -21,6 +22,8 @@ const useStyles = makeStyles((theme) => ({
 
 const Register = (props) => {
 	const classes = useStyles()
+
+	const [error, setError] = useState(null)
 
 	const [username, setUsername] = useState("")
 	const [email, setEmail] = useState("")
@@ -41,7 +44,13 @@ const Register = (props) => {
 	`
 
 	let handleSubmit = (e) => {
+		setError(null)
 		e.preventDefault()
+	}
+
+	const handleError = (error) => {
+		let errorComp = <Error errorMessage={error.message} />
+		setError(errorComp)
 	}
 
 	let confirm = async (data) => {
@@ -55,6 +64,7 @@ const Register = (props) => {
 
 	return (
 		<div className="register-form">
+			{error}
 			{/* <h5>Register your account below:</h5> */}
 		<form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
 			<div>
@@ -124,6 +134,7 @@ const Register = (props) => {
 				<Mutation
 					mutation={SIGNUP_MUTATION}
 					variables={registerData}
+					onError={error => handleError(error)}
 					onCompleted={data => confirm(data)}
 				>
 					{mutation => {

@@ -14,11 +14,13 @@ const useStyles = makeStyles((theme) => ({
 			width: "100%",
 			bottom: 0,
 			position: "fixed",
+			zIndex: 10
 		},
 		[theme.breakpoints.up('md')]: {
 			width: "100%",
 			height: "100%",
-			bottom: 0
+			bottom: 0,
+			zIndex: 10
 		}
 	},
 }))

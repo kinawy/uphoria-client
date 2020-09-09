@@ -9,6 +9,7 @@ import "../../styles/Profile.css"
 import Loading from "../Loading/Loading"
 import jwt_decode from "jwt-decode"
 import {AUTH_TOKEN} from "../../auth/constant"
+import Error from "../Error"
 
 const Profile = (props) => {
 	let userId = ""
@@ -33,6 +34,7 @@ const Profile = (props) => {
               }
               videos {
                   id
+				  videoUrl
               }
           }
       }
@@ -43,13 +45,13 @@ const Profile = (props) => {
 			<Logout handleLogout={props.handleLogout}/>
 			<Query query={queryUserInfo} variables={{ id: userId }}>
 				{({ loading, error, data  }) => {
-					if (loading) return "Loading...";
-					if (error) return `Query Failed: ${error}`;
+					if (loading) return <Loading />;
+					if (error) return <Error errorMessage={error.message} />;
 
 					return (
 						<>
 							<UserInfo user={{...data.user}}/>
-							<VideoGrid videos={data.videos}/>
+							<VideoGrid videos={data.user.videos}/>
 						</>
 					)
 				}}

@@ -3,8 +3,11 @@ import gql from "graphql-tag"
 import {Redirect} from "react-router-dom"
 import {Mutation} from "react-apollo"
 import "../../styles/Upload.css"
+import Loading from "../Loading/Loading"
+import Error from "../Error"
 
 const Upload = (props) => {
+	const [error, setError] = useState(null)
 	const [description, setDescription] = useState("")
 	const [file, setFile] = useState(null)
 	const [uploaded, setUploaded] = useState(false)
@@ -27,12 +30,18 @@ const Upload = (props) => {
 		if (validity.valid) setFile(file)
 	}
 
+	const handleError = (error) => {
+		let errorComp = <Error errorMessage={error.message} />
+		setError(errorComp)
+	}
+
 	let handleSubmit = (e) => {
 		e.preventDefault()
 	}
 
 	let confirm = async (result) => {
 		if (result) {
+			setError(null)
 			setUploaded(true)
 		}
 	}
@@ -42,6 +51,7 @@ const Upload = (props) => {
 	return (
 		<div className="upload-component">
 			<h2>Upload your content here</h2>
+			{error}
 			<form noValidate autoComplete="off" onSubmit={handleSubmit}>
 				<input type="text" name="description" value={description} onChange={(e) => {setDescription(e.target.value)}} />
 				<input type="file" accept="video/mp4,video/x-m4v,video/*" name="uphoriaVideo" onChange={changeFile}/>
@@ -49,6 +59,7 @@ const Upload = (props) => {
 					mutation={uploadMutation}
 					variables={uploadData}
 					onCompleted={result => confirm(result)}
+					onError={error => handleError(error)}
 				>
 					{mutation => {
 						const checkFile = () => {

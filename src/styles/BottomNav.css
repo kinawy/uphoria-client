@@ -2,4 +2,5 @@
     background-color: #d69ff1;
     left: 50%;
     width: 375px;
+    z-index: 10;
 }

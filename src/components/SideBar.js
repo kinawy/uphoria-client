@@ -6,13 +6,13 @@ import Comments from "./Comments"
 import "../styles/SideBar.css"
 
 
-const SideBar = () => {
+const SideBar = (props) => {
   return (
     <div className="side-bar">
-      <VideoUserProfile/>
-      <Likes/>
+      <VideoUserProfile userId={props.userId}/>
+      <Likes likes={props.likes.length}/>
       {/*<Comments/>*/}
-      <Shares/>
+      <Shares shares={props.shares}/>
     </div>
   )
 }

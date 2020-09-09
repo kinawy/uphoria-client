@@ -12,8 +12,8 @@
 
 @media only screen and (max-device-width: 375px) {
     .side-bar {
-        background-color: deeppink;
         position: absolute;
+        z-index: 1;
         bottom: 20%;
         right: 12%;
         width: 30px;
@@ -21,8 +21,9 @@
 }
 
 @media only screen and (min-device-width: 376px) {
-    .side-bar {background-color: #d69ff1;
+    .side-bar {
         position: absolute;
+        z-index: 1;
         bottom: 20%;
         right: 15%;
         width: 30px;
@@ -30,8 +31,9 @@
 }
 
 @media only screen and (min-device-width: 500px) {
-    .side-bar {background-color: #d69ff1;
+    .side-bar {
         position: absolute;
+        z-index: 1;
         bottom: 20%;
         right: 18%;
         width: 30px;
@@ -41,8 +43,8 @@
 
 @media only screen and (min-device-width: 1200px) {
     .side-bar {
-        background-color: #686868;
         position: absolute;
+        z-index: 1;
         bottom: 20%;
         right: 43%;
         width: 30px;

@@ -1,7 +1,11 @@
-.videoPlayer {
+.videos {
     background-color: #c49e9e;
     width: auto;
     height: 93.2vh;
+}
+
+.videoPlayer {
+    height: 87.5vh;
 }
 
 .videoFooter {
@@ -12,6 +16,7 @@
 
 .videoFooter-text {
     text-align: left;
+    font-weight: bolder;
     font-size: small;
-    color: black;
+    color: white;
 }

@@ -4,11 +4,21 @@ import Grid from "@material-ui/core/Grid"
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+	  marginBottom: "5vh",
+	  border: "1px solid black",
   },
+	row: {
+  	//Empty CSS
+	},
+	item: {
+  	height: "100%",
+		paddingBottom: "0px",
+	},
   video: {
-    padding: theme.spacing(1),
+	  paddingBottom: "0px",
+    border: "1px solid black",
     textAlign: "center",
+	  height: "100%",
     width: "100%",
     position: "relative",
   }
@@ -20,13 +30,13 @@ const VideoGrid = (props) => {
   function FormRow() {
     return (
       <React.Fragment>
-        <Grid item xs={4}>
+        <Grid className={classes.item} item xs={4} p={0} m={0}>
           <img src="https://via.placeholder.com/200x350" className={classes.video}/>
         </Grid>
-        <Grid item xs={4}>
+        <Grid className={classes.item} item xs={4} p={0} m={0}>
           <img src="https://via.placeholder.com/200x350" className={classes.video}/>
         </Grid>
-        <Grid item xs={4}>
+        <Grid className={classes.item} item xs={4} p={0} m={0}>
           <img src="https://via.placeholder.com/200x350" className={classes.video}/>
         </Grid>
       </React.Fragment>
@@ -35,14 +45,14 @@ const VideoGrid = (props) => {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={1}>
-        <Grid container item s={12} spacing={3}>
+      <Grid container>
+        <Grid className={classes.row} container item s={12} p={0} m={0}>
           <FormRow/>
         </Grid>
-        <Grid container item s={12} spacing={3}>
+        <Grid className={classes.row} container item s={12} p={0} m={0}>
           <FormRow/>
         </Grid>
-        <Grid container item s={12} spacing={3}>
+        <Grid className={classes.row} container item s={12} p={0} m={0}>
           <FormRow/>
         </Grid>
       </Grid>

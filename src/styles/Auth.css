@@ -1,7 +1,34 @@
+.logoDiv{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+.logoDiv img {
+    margin: 20px;
+    filter: invert(1);  
+    height: 200px;
+    
+}
+
 .auth-page {
     /*background-color: hotpink;*/
+    
     color: black;
     height: 95vh;
+    
+}
+.auth-page button {
+    width: 50%;
+}
+
+.btn-group {
+    padding-bottom: 30px;
+}
+
+.authFormDiv {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #standard-text-input {

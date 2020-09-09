@@ -8,6 +8,8 @@ import { Query } from "react-apollo"
 import UserInfo from "./Profile/UserInfo"
 import VideoGrid from "./Profile/VideoGrid"
 import { useSwipeable, Swipeable } from 'react-swipeable'
+import Loading from "./Loading/Loading"
+import Error from "./Error"
 
 const Video = (props) => {
   const queryVideos = gql`
@@ -31,8 +33,8 @@ const Video = (props) => {
       <TopNav />
       <Query query={queryVideos}>
         {({ loading, error, data }) => {
-          if (loading) return "Loading..."
-          if (error) return `Query Failed: ${error}`
+	        if (loading) return <Loading />;
+	        if (error) return <Error errorMessage={error.message} />;
 
           let videos = data.videos.map((video) => {
             return (

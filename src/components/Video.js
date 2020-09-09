@@ -5,7 +5,7 @@ import SideBar from "./SideBar"
 import TopNav from "./TopNav/TopNav"
 import gql from "graphql-tag"
 import {Query} from "react-apollo"
-import { useSwipeable, Swipeable } from 'react-swipeable'
+// import { useSwipeable, Swipeable } from 'react-swipeable'
 
 const Video = (props) => {
 

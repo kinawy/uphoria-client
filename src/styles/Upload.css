@@ -1,4 +1,9 @@
 .upload-component {
     height: 100vh;
-    margin: 50% auto
+    margin: 50% auto;
+    color: white;
+}
+
+input {
+    color: white;
 }

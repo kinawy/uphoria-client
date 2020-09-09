@@ -1,0 +1,7 @@
+.header-tab {
+    background-color: transparent;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    position: fixed;
+}

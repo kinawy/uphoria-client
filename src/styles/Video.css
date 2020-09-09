@@ -1,11 +1,16 @@
 .videos {
     background-color: #c49e9e;
     width: auto;
-    height: 93.2vh;
+    height: 93vh;
+}
+
+.Video-Container {
+    position: relative;
+    height: 93vh;
 }
 
 .videoPlayer {
-    height: 87.5vh;
+    height: 93vh;
 }
 
 .videoFooter {

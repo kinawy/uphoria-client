@@ -5,7 +5,7 @@
 }
 
 .videoPlayer {
-    width: 100%
+    height: 87.5vh;
 }
 
 .videoFooter {
@@ -16,6 +16,7 @@
 
 .videoFooter-text {
     text-align: left;
+    font-weight: bolder;
     font-size: small;
-    color: black;
+    color: white;
 }

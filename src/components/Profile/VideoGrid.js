@@ -26,23 +26,45 @@ const useStyles = makeStyles((theme) => ({
 
 const VideoGrid = (props) => {
   const classes = useStyles()
+  let videos
+
   
 
   const FormRow = () => {
     let getVideos = props.videos.map(video => {
-      
+      videos = {video}
+      console.log(videos)
+      return videos
     })
 
     return (
       <React.Fragment>
         <Grid className={classes.item} item xs={4} p={0} m={0}>
-          <img src="https://via.placeholder.com/200x350" className={classes.video}/>
+          <video
+              src={`https://res.cloudinary.com/agregis/video/upload/e_boomerang/eo_1/c_scale,g_south_west,l_logo_transparent_wvrps0,w_144/${videos.video.videoUrl}.mp4`}
+              autoPlay={true}
+              loop={true}
+              muted
+              className={classes.video}
+            />
         </Grid>
         <Grid className={classes.item} item xs={4} p={0} m={0}>
-          <img src="https://via.placeholder.com/200x350" className={classes.video}/>
+          <video
+              src={`https://res.cloudinary.com/agregis/video/upload/e_boomerang/eo_1/c_scale,g_south_west,l_logo_transparent_wvrps0,w_144/${videos.video.videoUrl}.mp4`}
+              autoPlay={true}
+              loop={true}
+              muted
+              className={classes.video}
+            />
         </Grid>
         <Grid className={classes.item} item xs={4} p={0} m={0}>
-          <img src="https://via.placeholder.com/200x350" className={classes.video}/>
+          <video
+              src={`https://res.cloudinary.com/agregis/video/upload/e_boomerang/eo_1/c_scale,g_south_west,l_logo_transparent_wvrps0,w_144/${videos.video.videoUrl}.mp4`}
+              autoPlay={true}
+              loop={true}
+              muted
+              className={classes.video}
+            />
         </Grid>
       </React.Fragment>
     )

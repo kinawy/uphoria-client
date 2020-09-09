@@ -6,6 +6,7 @@ import Logout from "../Logout/Logout"
 import gql from "graphql-tag"
 import {Query} from "react-apollo"
 import "../../styles/Profile.css"
+import Loading from "../Loading/Loading"
 import jwt_decode from "jwt-decode"
 import {AUTH_TOKEN} from "../../auth/constant"
 

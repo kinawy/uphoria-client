@@ -1,3 +1,7 @@
+html {
+  scroll-snap-type: y mandatory;
+}
+
 .App {
   background-color: black;
   height: 100%;

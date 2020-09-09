@@ -1,0 +1,30 @@
+.errorDiv {
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    margin: 0px;
+    color: #211b19;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.errorDiv h1 {
+    font-size: 96px;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    text-shadow: 3px 3px 1px #000000; /* Change the text color here*/
+    background: -webkit-linear-gradient(rgb(217, 26, 235), rgb(57, 6, 197));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.errorDiv h2 {
+    font-size: 21px;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    text-shadow: 1px 1px 1px #000000; /* Change the text color here*/
+    background: -webkit-linear-gradient(rgb(217, 26, 235), rgb(57, 6, 197));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

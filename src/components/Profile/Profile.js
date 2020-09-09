@@ -11,6 +11,9 @@ import {AUTH_TOKEN} from "../../auth/constant"
 
 const Profile = (props) => {
 	let userId = ""
+
+	if (!props.user) return <Redirect to="/auth"/>
+
 	if (!props.location.userId) {
 		let token = jwt_decode(localStorage.getItem(AUTH_TOKEN))
 		userId = token._id
@@ -33,8 +36,7 @@ const Profile = (props) => {
           }
       }
 	`
-	if (!props.user) return <Redirect to="/auth"/>
-
+	
 	return (
 		<div className="profile-display">
 			<Logout handleLogout={props.handleLogout}/>

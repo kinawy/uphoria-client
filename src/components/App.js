@@ -12,8 +12,8 @@ import Video from "./Video"
 import Profile from "./Profile/Profile"
 import Auth from "./Auth/Auth"
 import Upload from "./Upload/Upload"
+import Loading from "./Loading/Loading"
 import Error from "./Error"
-
 
 const App = () => {
 	let [currentUser, setCurrentUser] = useState("")
@@ -41,6 +41,7 @@ const App = () => {
     }
     return <Redirect to="/auth"/>
 	}
+
 
 	return (
 		<div className="App">

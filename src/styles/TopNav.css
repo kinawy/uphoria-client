@@ -1,7 +1,6 @@
 .header-tab {
     width: 100%;
     z-index: 100;
-    top: 0;
     position: fixed;
 }
 
@@ -10,11 +9,23 @@ button:focus {
     background-color: transparent !important;
 }
 
+.PrivateTabIndicator-root-10, .PrivateTabIndicator-colorPrimary-11, .MuiTabs-indicator {
+    background-color: #36064c !important;
+}
+
 .MuiTab-textColorPrimary.Mui-selected, .MuiTouchRipple-root {
     color: #36064c !important;
 }
 
+.PrivateTabIndicator-colorPrimary-11 {
+    background-color: #3f51b5;
+}
+
 .PrivateTabIndicator-colorPrimary-2 {
+    background-color: #36064c !important;
+}
+
+.PrivateTabIndicator-colorPrimary-3 {
     background-color: #36064c !important;
 }
 

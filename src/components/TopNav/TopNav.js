@@ -6,10 +6,8 @@ import Tab from "@material-ui/core/Tab"
 import Typography from "@material-ui/core/Typography"
 import Box from "@material-ui/core/Box"
 import "../../styles/TopNav.css"
-
 const TabPanel = (props) => {
   const { children, value, index, ...other } = props
-
   return (
     <Typography
       component="div"
@@ -22,20 +20,16 @@ const TabPanel = (props) => {
     </Typography>
   )
 }
-
 TabPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.any.isRequired,
   value: PropTypes.any.isRequired,
 }
-
 const TopNav = (props) => {
   const [value, setValue] = useState(0)
-
   const handleChange = (event, newValue) => {
     setValue(newValue)
   }
-
   return (
     <div className="header-tab">
       <AppBar position="static" color="transparent">
@@ -47,12 +41,10 @@ const TopNav = (props) => {
           variant="fullWidth"
           aria-label="action tabs example">
           <Tab label="Following" />
-              <Tab label="Hashtags" />
+          <Tab label="Hashtags" />
         </Tabs>
-        
       </AppBar>
     </div>
   )
 }
 export default TopNav
-

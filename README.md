@@ -6,14 +6,16 @@ a profile, following hashtags and other users, update your own profile with a bi
 
 ## Getting Started
 To run this project on your local machine, fork and clone the [client](https://github.com/anthonygregis/uphoria-client) 
-and [backend](https://github.com/anthonygregis/uphoria-backend) repos from github. 
-Install all dependencies by running `npm i` in the project directory terminal. 
-Create a .env file to keep your APP_SECRET, MONGO_URI, CLOUDINARY_SECRET, CLOUDINARY_KEY and CLOUDINARY_NAME. 
-Make sure you are using Node version 12; check by running `node -v` in your terminal. 
-If you're running something higher than 12.18.3 then run `nvm use 12` in your terminal to use the correct version. 
+and [backend](https://github.com/anthonygregis/uphoria-backend) repos from github. <br>
+Install all dependencies by running `npm i` in the project directory terminal. <br>
+Create a .env file to keep your APP_SECRET, MONGO_URI, CLOUDINARY_SECRET, CLOUDINARY_KEY and CLOUDINARY_NAME.<br> 
+Make sure you are using Node version 12; check by running `node -v` in your terminal. <br>
+If you're running something higher than 12.18.3 then run `nvm use 12` in your terminal to use the correct version. <br>
+To run uphoria_backend, type `nodemon` or `node index.js` into your terminal.<br>
+Run `npm i` in uphoria_client to access your frontend.<br>
  
  # About the project
- As a team we wanted to create something that would be fun and safe. 
+ As a team we wanted to create something that would be fun and safe.
  
  ### Erd & Wireframe
  
@@ -38,7 +40,17 @@ If you're running something higher than 12.18.3 then run `nvm use 12` in your te
 
 # The code
 
-### Import Code Snippets
+## GraphQL
+Access your GraphQL playground by typing "http://localhost:4000/graphql" into your browser while your backend application is
+running. Here you can play around with the querying syntax of GraphQL and see the exact formation that the data is stored in.
+### Returning all users in database with specifics
+![graphql](https://i.imgur.com/PnwWTMC.png)
+### Returning a single user based on user id
+![graphql](https://i.imgur.com/atuEVNr.png)
+
+
+
+## Import Code Snippets
 
 In Revolver.js 
 ```javascript

@@ -15,8 +15,8 @@ and [backend](https://github.com/anthonygregis/uphoria-backend) repos from githu
  
  [ERD](https://app.lucidchart.com/documents/edit/d6c23495-cdc7-4958-a05b-f4d7aaa90dbc/0_0?shared=true).
  
- ![Wire Frame 1](https://i.imgur.com/iO6v55E.png)
- ![Wire Frame 2](https://i.imgur.com/mqXkyYd.png)
+ ![Wire Frame 1](https://i.imgur.com/BDTm53Y.png)
+
 
 ### Tech Stack
 

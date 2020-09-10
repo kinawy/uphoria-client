@@ -49,7 +49,8 @@ const Register = (props) => {
 	}
 
 	const handleError = (error) => {
-		let errorComp = <Error errorMessage={error.message} />
+		let errorComp = <Error errorMessage="All fields are required" />
+		console.log(error.message)
 		setError(errorComp)
 	}
 

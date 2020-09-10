@@ -4,7 +4,8 @@
     padding: 0 0 10vh;
 }
 .appInfo {
-    margin: 5vh 10vh;
+    margin: 20vh 10vh 10vh;
+    font-size: x-small;
 }
 .logoDiv{
     margin-top: 20px;
@@ -16,6 +17,8 @@
     height: 25vh;
 }
 .auth-page button {
+    margin-left: 10vh;
+    margin-top: 5vh;
     width: 45%;
     background-color: #36064c;
 }

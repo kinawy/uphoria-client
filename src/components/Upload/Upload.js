@@ -59,7 +59,7 @@ const Upload = (props) => {
 			<form noValidate autoComplete="off" onSubmit={handleSubmit}>
 
 				<input type="text" name="description" value={description} onChange={(e) => {setDescription(e.target.value)}} placeholder="write your description"/>
-				<input type="file" accept="video/mp4,video/x-m4v,video/*" name="uphoriaVideo" onChange={changeFile}/>
+				<input type="file" accept="video/mp4,video/x-m4v,video/*" className="file-btn" name="uphoriaVideo" onChange={changeFile}/>
 				<Mutation
 					mutation={uploadMutation}
 					variables={uploadData}

@@ -3,6 +3,7 @@ import gql from "graphql-tag"
 import {Redirect} from "react-router-dom"
 import {Mutation} from "react-apollo"
 import "../../styles/Upload.css"
+import logo from '../../assets/logo.png' // import logo image here
 import Loading from "../Loading/Loading"
 import Error from "../Error"
 
@@ -50,11 +51,15 @@ const Upload = (props) => {
 
 	return (
 		<div className="upload-component">
+			<div className="logoDiv">
+				<img src={logo} />
+			</div>
 			<h2>Upload your content here</h2>
 			{error}
 			<form noValidate autoComplete="off" onSubmit={handleSubmit}>
-				<input type="text" name="description" value={description} onChange={(e) => {setDescription(e.target.value)}} />
-				<input type="file" accept="video/mp4,video/x-m4v,video/*" name="uphoriaVideo" onChange={changeFile}/>
+
+				<input type="text" name="description" value={description} onChange={(e) => {setDescription(e.target.value)}} placeholder="write your description"/>
+				<input type="file" accept="video/mp4,video/x-m4v,video/*" className="file-btn" name="uphoriaVideo" onChange={changeFile}/>
 				<Mutation
 					mutation={uploadMutation}
 					variables={uploadData}

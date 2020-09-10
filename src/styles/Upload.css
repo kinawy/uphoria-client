@@ -1,9 +1,31 @@
 .upload-component {
     height: 100vh;
-    margin: 50% auto;
+    margin: 5% 15%;
     color: white;
 }
 
+.logoDiv img {
+    height: 25vh;
+    /*margin-top: 10%;*/
+}
+
 input {
+    margin-top: 50px;
+    margin-left: 20px;
     color: white;
+    /*border-bottom: 1px solid #4c4574 !important;*/
+}
+
+.btn {
+    margin: 50px;
+
+}
+
+.upload-component button {
+    width: 45%;
+    background-color: #36064c;
+}
+
+.file-btn {
+    /*background-color: #36064c;*/
 }

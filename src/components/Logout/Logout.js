@@ -1,10 +1,12 @@
 import React from "react"
+import { Link } from 'react-router-dom'
+
 
 const Logout = (props) => {
   return (
-    <button className="btn btn-primary" onClick={props.handleLogout}>
+    <Link className="btn btn-primary logoutButton" onClick={props.handleLogout}>
       Log-out
-    </button>
+    </Link>
   )
 }
 

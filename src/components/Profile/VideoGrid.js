@@ -5,18 +5,19 @@ import Grid from "@material-ui/core/Grid"
 const useStyles = makeStyles((theme) => ({
   root: {
     marginBottom: "5vh",
-    border: "1px solid black",
+    border: "1px solid #736f72",
   },
   row: {
     // flexDirection: "column",
   },
   item: {
     paddingBottom: "0px",
-    border: "1px solid black",
+    border: "1px solid #736f72",
   },
   video: {
+    paddingTop: "5px",
     paddingBottom: "0px",
-    height: "100%",
+    height: "208px",
     textAlign: "center",
     width: "100%",
     position: "relative",

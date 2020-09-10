@@ -8,7 +8,9 @@ import { Query } from "react-apollo"
 import "../../styles/Profile.css"
 import Loading from "../Loading/Loading"
 import jwt_decode from "jwt-decode"
-import { AUTH_TOKEN } from "../../auth/constant"
+import {AUTH_TOKEN} from "../../auth/constant"
+import Error from "../Error"
+
 
 const Profile = (props) => {
   let userId = ""
@@ -58,15 +60,14 @@ const Profile = (props) => {
       }
     `
   }
-
-  return (
-    <div className="profile-display">
-      <Logout handleLogout={props.handleLogout} />
-      <Query query={queryUserInfo} variables={{ id: userId }}>
-        {({ loading, error, data }) => {
-          console.log(data)
-          if (loading) return "Loading..."
-          if (error) return `Query Failed: ${error}`
+	
+	return (
+		<div className="profile-display">
+			<Logout handleLogout={props.handleLogout}/>
+			<Query query={queryUserInfo} variables={{ id: userId }}>
+				{({ loading, error, data  }) => {
+					if (loading) return <Loading />;
+					if (error) return <Error errorMessage={error.message} />;
 
           return (
             <>

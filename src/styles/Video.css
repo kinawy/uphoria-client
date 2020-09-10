@@ -1,16 +1,21 @@
 .videos {
     background-color: #c49e9e;
     width: auto;
-    height: 93vh;
+    padding-bottom: 9.9vh;
 }
 
 .Video-Container {
     position: relative;
     height: 93vh;
+    overflow: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-snap-align: start;
 }
 
 .videoPlayer {
-    height: 93vh;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
 }
 
 .videoFooter {
@@ -24,4 +29,5 @@
     font-weight: bolder;
     font-size: small;
     color: white;
+    text-shadow: 1px 1px 10px black;
 }

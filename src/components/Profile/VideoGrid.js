@@ -37,7 +37,7 @@ const VideoGrid = (props) => {
     let i
     for (i = 0; i < videos.length; i++) {
       newVideos.push(
-        <Grid className={classes.item} item xs={4} p={0} m={0}>
+        <Grid key={videos[i].id} className={classes.item} item xs={4} p={0} m={0}>
           <video
             src={`https://res.cloudinary.com/agregis/video/upload/e_boomerang/eo_1/c_scale,g_south_west,l_logo_transparent_wvrps0,w_144/${videos[i].videoUrl}.mp4`}
             autoPlay={true}

@@ -4,21 +4,26 @@ This is a place to share short form content, much like an app that sounds like T
 your data with China but you still want to understand what your friends are referencing. This is the app for you. Create 
 a profile, following hashtags and other users, update your own profile with a bio, instagram link or a personal url.
 
-##Getting Started
+## Getting Started
 To run this project on your local machine, fork and clone the [client](https://github.com/anthonygregis/uphoria-client) 
-and [backend](https://github.com/anthonygregis/uphoria-backend) repos from github. Install all dependencies by running
- `npm i` in the project directory terminal. Create a .env file to keep your APP_SECRET and MONGO_URI.````````
+and [backend](https://github.com/anthonygregis/uphoria-backend) repos from github. <br>
+Install all dependencies by running `npm i` in the project directory terminal. <br>
+Create a .env file to keep your APP_SECRET, MONGO_URI, CLOUDINARY_SECRET, CLOUDINARY_KEY and CLOUDINARY_NAME.<br> 
+Make sure you are using Node version 12; check by running `node -v` in your terminal. <br>
+If you're running something higher than 12.18.3 then run `nvm use 12` in your terminal to use the correct version. <br>
+To run uphoria_backend, type `nodemon` or `node index.js` into your terminal.<br>
+Run `npm start` in uphoria_client to access your frontend.<br>
+ 
+ # About the project
+ As a team we wanted to create something that would be fun and safe.
+ 
+ ### Erd & Wireframe
+ 
+ ![ERD](https://i.imgur.com/tlPjVXm.png)
+ 
+ ![Wire Frame 1](https://i.imgur.com/BDTm53Y.png)
 
-### Tech Stack
-
-* Mongoose
-* Mongodb
-* Express
-* React
-* Nodejs
-* GraphQL
-* Apollo
-* Material UI
+![color pallet](https://i.imgur.com/g12fs9F.png=50)
 
 ### Style Guide
 
@@ -33,17 +38,120 @@ and [backend](https://github.com/anthonygregis/uphoria-backend) repos from githu
 * Avoid going over 80 characters per line
 * ONE FEATURE PER BRANCH (If you don’t it will lead to mass PR conflictions)
 
+# The code
 
-### Import Code Snippets
+## GraphQL
+Access your GraphQL playground by typing "http://localhost:4000/graphql" into your browser while your backend application is
+running. Here you can play around with the querying syntax of GraphQL and see the exact formation that the data is stored in.
+### Returning all users in database with specifics
+![graphql](https://i.imgur.com/PnwWTMC.png)
+### Returning a single user based on user id
+![graphql](https://i.imgur.com/atuEVNr.png)
 
 
-### Erd & Wireframe
 
-[ERD](https://app.lucidchart.com/documents/edit/d6c23495-cdc7-4958-a05b-f4d7aaa90dbc/0_0?shared=true).
+## Import Code Snippets
 
-![Wire Frame 1](https://i.imgur.com/iO6v55E.png)
-![Wire Frame 2](https://i.imgur.com/mqXkyYd.png)
+In Revolver.js 
+```javascript
+const resolver = {
+  Query: {
+    user: {
+      description: "Returns a user based off their ID",
+		resolve: async (_, {id, ...args}, context) => {
+          console.log("User route hit")
+			if (!args.privilegedSecret) {
+			  args.privilegedSecret = ""
+			}
+			  const foundUser = await db.User.findById(id).populate({ 
+                              path: "videos", options: { sort: { 'createdAt': -1 } } 
+                              })
+               console.log(foundUser)
+			if (args.privilegedSecret !== "antiTikTok") {
+			  foundUser.email = "Not Authorized"
+				foundUser.birthday = "Not Authorized"
+			}
+			return foundUser
+        }
+    }
+  }
+}
+```
+Creating a mutation in Resolver.js
+```javascript
+deleteUser: {
+  description: "We aren't Tik Tok",
+	resolve: async (_, {id}, context) => {
+      console.log(context.user)
+		if (!context.user) throw new Error("Protected Route, please login")
+		if (context.user._id !== id) throw new Error("You are not authorized to delete another user")
+		  await new Promise((resolve, reject) => {
+		    db.User.findByIdAndDelete(id, (err, docs) => {
+		      if (err) reject(err)
+			  else resolve(true)
+		    })
+		  })
+            return new Promise((resolve, reject) => {
+              db.Video.deleteMany({userId: id}, (err, docs) => {
+                if (err) reject(err)
+				else resolve(true)
+              })
+            })
+    }
+}
+```
 
+In typeDef.js
+```javascript
+const typeDefs = gql`  
+type User {
+    id: ID!
+    username: String!
+    email: String
+    password: String!
+    name: String!
+    birthday: Date
+    profile: Profile!
+    followingUsers: [ID!]!
+    videos: [Video!]!
+  }
+`
+```
+Video upload function
+```javascript
+const cloudinaryUpload = async ({stream}) => {
+  try {
+    await new Promise((resolve, reject) => {
+      const streamLoad = cloudinary.uploader.upload_stream({ resource_type: 'video' },function (error, result) {
+        if (result) {
+          publicId = result.public_id
+			resolve(publicId)
+          } else {
+            reject(error)
+          }
+        })
+          stream.pipe(streamLoad)
+    })
+  } catch (err) {
+    throw new Error(`Failed to upload uphoria video! Err:${err.message}`)
+  }
+}
+await cloudinaryUpload({stream})
+return (publicId)
+```
+
+### Tech Stack
+
+* Mongoose
+* Mongodb
+* Express
+* React
+* Nodejs
+* GraphQL
+* Apollo
+* Material UI
+* Cloudinary
+* Bcrypt
 
 # Models
 
@@ -86,6 +194,14 @@ and [backend](https://github.com/anthonygregis/uphoria-backend) repos from githu
 | updatedAt | Date | Auto-generated |
 
 ### Routes
+
+| Route Name |  Notes |
+| ---------------  | ------------------------------ |
+| / |  Home route, protected |
+| /auth  | Auth route with register and login |
+| /profile  | User profile, protected |
+| /create  | Upload videos |
+| /edit  | Edit user profile, protected |
 
 
 

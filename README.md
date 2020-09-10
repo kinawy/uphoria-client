@@ -6,30 +6,22 @@ a profile, following hashtags and other users, update your own profile with a bi
 
 ## Getting Started
 To run this project on your local machine, fork and clone the [client](https://github.com/anthonygregis/uphoria-client) 
-and [backend](https://github.com/anthonygregis/uphoria-backend) repos from github. Install all dependencies by running
- `npm i` in the project directory terminal. Create a .env file to keep your APP_SECRET, MONGO_URI, CLOUDINARY_SECRET 
- CLOUDINARY_KEY and CLOUDINARY_NAME. Make sure you are using Node version 12; check by running `node -v` in your terminal. 
- If you're running something higher than 12.18.3 then run `nvm use 12` in your terminal to use the correct version. 
+and [backend](https://github.com/anthonygregis/uphoria-backend) repos from github. 
+Install all dependencies by running `npm i` in the project directory terminal. 
+Create a .env file to keep your APP_SECRET, MONGO_URI, CLOUDINARY_SECRET, CLOUDINARY_KEY and CLOUDINARY_NAME. 
+Make sure you are using Node version 12; check by running `node -v` in your terminal. 
+If you're running something higher than 12.18.3 then run `nvm use 12` in your terminal to use the correct version. 
+ 
+ # About the project
+ As a team we wanted to create something that would be fun and safe. 
  
  ### Erd & Wireframe
  
- [ERD](https://app.lucidchart.com/documents/edit/d6c23495-cdc7-4958-a05b-f4d7aaa90dbc/0_0?shared=true).
+ ![ERD](https://i.imgur.com/tlPjVXm.png)
  
  ![Wire Frame 1](https://i.imgur.com/BDTm53Y.png)
 
-
-### Tech Stack
-
-* Mongoose
-* Mongodb
-* Express
-* React
-* Nodejs
-* GraphQL
-* Apollo
-* Material UI
-* Cloudinary
-* Bcrypt
+![color pallet](https://i.imgur.com/g12fs9F.png=50)
 
 ### Style Guide
 
@@ -44,6 +36,7 @@ and [backend](https://github.com/anthonygregis/uphoria-backend) repos from githu
 * Avoid going over 80 characters per line
 * ONE FEATURE PER BRANCH (If you don’t it will lead to mass PR conflictions)
 
+# The code
 
 ### Import Code Snippets
 
@@ -135,8 +128,18 @@ await cloudinaryUpload({stream})
 return (publicId)
 ```
 
+### Tech Stack
 
-
+* Mongoose
+* Mongodb
+* Express
+* React
+* Nodejs
+* GraphQL
+* Apollo
+* Material UI
+* Cloudinary
+* Bcrypt
 
 # Models
 

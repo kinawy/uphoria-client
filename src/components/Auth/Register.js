@@ -103,9 +103,6 @@ const Register = (props) => {
 					id="standard-number"
 					placeholder="Birthdate"
 					type="date"
-					InputplaceholderProps={{
-						shrink: true
-					}}
 					value={birthday}
 					onChange={(e) => {
 						setBirthday(e.target.value)

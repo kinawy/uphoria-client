@@ -32,7 +32,6 @@ const VideoGrid = (props) => {
     while (videos < props.videos.length) {
       props.videos.forEach((video) => {
         videos.push(video)
-        console.log(videos)
       })
     }
     let i
@@ -48,7 +47,6 @@ const VideoGrid = (props) => {
           />
         </Grid>
       )
-      console.log(newVideos)
     }
     return newVideos
   }

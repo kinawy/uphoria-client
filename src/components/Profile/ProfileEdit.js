@@ -39,7 +39,6 @@ const ProfileEdit = (props) => {
 
   let userId = props.location.user.id
   let profile = { bio, instagramUrl, personalUrl }
-  let editData = { username, email, name, birthday, userId }
 
   if (!props.location.user) return <Redirect to="/" />
 
@@ -149,7 +148,7 @@ const ProfileEdit = (props) => {
           />
           <Mutation
             mutation={UPDATE_USER_MUTATION}
-            variables={(editData, profile)}
+            variables={{  username: username, email: email, name: name, birthday: birthday ,profile, id: userId }}
             onCompleted={(data) => confirm(data)}>
             {(mutation) => {
               return (

@@ -2,15 +2,14 @@ import React from "react"
 import VideoGrid from "./VideoGrid"
 import UserInfo from "./UserInfo"
 import { Redirect } from "react-router-dom"
-import Logout from "../Logout/Logout"
 import gql from "graphql-tag"
 import { Query } from "react-apollo"
 import "../../styles/Profile.css"
 import Loading from "../Loading/Loading"
 import jwt_decode from "jwt-decode"
-import {AUTH_TOKEN} from "../../auth/constant"
+import { AUTH_TOKEN } from "../../auth/constant"
 import Error from "../Error"
-
+import Logout from "../Logout/Logout"
 
 const Profile = (props) => {
   let userId = ""
@@ -60,18 +59,21 @@ const Profile = (props) => {
       }
     `
   }
-	
-	return (
-		<div className="profile-display">
-			<Logout handleLogout={props.handleLogout}/>
-			<Query query={queryUserInfo} variables={{ id: userId }}>
-				{({ loading, error, data  }) => {
-					if (loading) return <Loading />;
-					if (error) return <Error errorMessage={error.message} />;
 
+  return (
+    <div className="profile-display">
+      <Query query={queryUserInfo} variables={{ id: userId }}>
+        {({ loading, error, data }) => {
+          if (loading) return <Loading />
+          if (error) {
+            console.log(error.message)
+            return <Error errorMessage={"Sorry, there's been an error."} />
+          }
           return (
             <>
+              <Logout handleLogout={props.handleLogout} />
               <UserInfo user={{ ...data.user }} />
+
               <VideoGrid videos={data.user.videos} />
             </>
           )

@@ -1,19 +1,40 @@
 .profile-display {
-    text-align: center;
-    padding-bottom: 6vh;
-    background-color: #686868;
-    width: 375px;
+  text-align: center;
+  padding-bottom: 6vh;
+  background-color: black;
+  width: 375px;
+  color: #24a8e6;
+}
+
+.icon-set {
+  color: purple;
+}
+
+.logoutButton {
+  margin: 4px 35.5vh 4px 0px !important;
+  background-color: black;
+  border: 1px solid #736f72;
+  color: #c5c1c4;
+  border-radius: 5px;
+  font-size: xx-small;
+  width: 10vh;
+  height: vh;
+  text-align: center !important;
+}
+
+.user-name {
+  margin: 1vh 0 0.912rem;
 }
 
 .circle {
-    height: 15vh;
-    width: 15vh;
+  height: 15vh;
+  width: 15vh;
 }
 
 .ig-url {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 .personal-url {
-    font-size: 15px;
+  font-size: 15px;
 }

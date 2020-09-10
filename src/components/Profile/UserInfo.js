@@ -1,23 +1,54 @@
 import React from "react"
-import {makeStyles} from "@material-ui/core/styles"
+import { Link } from "react-router-dom"
+import { makeStyles } from "@material-ui/core/styles"
 import Icon from "@material-ui/core/Icon"
-import ProfileButton from './ProfileButton'
+import ProfileButton from "./ProfileButton"
+import InstaIcon from "../../assets/instagram.svg"
+import LinkIcon from "../../assets/link.svg"
 
+const useStyles = makeStyles({
+  imageIcon: {
+    height: "100%",
+  },
+  iconRoot: {
+    textAlign: "center",
+  },
+})
 
 const UserInfo = (props) => {
-	console.log("UserInfo Prop:", props.user)
+  const classes = useStyles()
 
-	return (
-		<div className="user-info">
-			<h4>{props.user.username}</h4>
-			<img src="https://rb.gy/yecyjb" className="circle responsive-image"/>
-			{/* could be edit or follow/unfollow button depending on user*/}
-			<ProfileButton user={props.user}/>
-			<p>{props.user.profile.bio}</p>
-			<p className="ig-url">{props.user.profile.instagramUrl}</p>
-			<p className="personal-url">{props.user.profile.personalUrl}</p>
-		</div>
-	)
+  console.log("UserInfo Prop:", props.user)
+
+  return (
+    <div className="user-info">
+      <h4 className="user-name">{props.user.username}</h4>
+      <img
+        src="https://rb.gy/yecyjb"
+        className="circle responsive-image userImage"
+      />
+      <br />
+      {/* could be edit or follow/unfollow button depending on user*/}
+      <ProfileButton user={props.user} />
+      <p>{props.user.profile.bio}</p>
+      <p className="ig-url">
+        <a href={ props.user.profile.instagramUrl }>
+          <Icon classes={{ root: classes.iconRoot }}>
+            <img className={classes.imageIcon} src={InstaIcon} />
+          </Icon>{" "}
+          {props.user.profile.instagramUrl}
+        </a>
+      </p>
+      <a href={ props.user.profile.personalUrl }>
+        <Icon classes={{ root: classes.iconRoot }}>
+          <img className={classes.imageIcon} src={LinkIcon} />
+        </Icon>{" "}
+        {props.user.profile.personalUrl}
+      </a>
+      <br />
+      <br />
+    </div>
+  )
 }
 
 export default UserInfo

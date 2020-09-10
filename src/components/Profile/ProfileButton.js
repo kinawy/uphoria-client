@@ -10,7 +10,7 @@ const ProfileButton = (props) => {
     <>
       <Link to={{ pathname:"/edit", user: props.user}}>
         <IconButton>
-          <SettingsIcon />
+          <SettingsIcon className="settingsIcon icon-set"/>
         </IconButton>
       </Link>
     </>

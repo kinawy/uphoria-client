@@ -9,9 +9,9 @@
 }
 
 .MuiBottomNavigationAction-root.Mui-selected {
-    color: #36064c;
+    color: #36064c !important;
 }
 
 .Mui-selected {
-    color: #36064c;
+    color: #36064c !important;
 }

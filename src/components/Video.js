@@ -36,6 +36,8 @@ const Video = (props) => {
             userId={video.userId.id}
             likes={video.likes}
             shares={video.shares}
+            muted={muted}
+            handleMute={handleMute}
           />
           <VideoFooter
             username={video.userId.username}
@@ -47,10 +49,10 @@ const Video = (props) => {
             loop={true}
             autoPlay
             muted={muted}
-            onClick={handleMute}
             onTouchEnd={handleUnmute}
           />
         </div>
+
       </div>
     )
 }

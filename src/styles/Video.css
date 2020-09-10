@@ -7,7 +7,7 @@
 .Video-Container {
     position: relative;
     height: 93vh;
-    overflow: scroll;
+    overflow: hidden;
     scroll-snap-type: y mandatory;
     scroll-snap-align: start;
 }

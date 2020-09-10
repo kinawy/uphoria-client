@@ -12,7 +12,7 @@ Create a .env file to keep your APP_SECRET, MONGO_URI, CLOUDINARY_SECRET, CLOUDI
 Make sure you are using Node version 12; check by running `node -v` in your terminal. <br>
 If you're running something higher than 12.18.3 then run `nvm use 12` in your terminal to use the correct version. <br>
 To run uphoria_backend, type `nodemon` or `node index.js` into your terminal.<br>
-Run `npm i` in uphoria_client to access your frontend.<br>
+Run `npm start` in uphoria_client to access your frontend.<br>
  
  # About the project
  As a team we wanted to create something that would be fun and safe.

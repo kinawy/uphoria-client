@@ -4,10 +4,19 @@ This is a place to share short form content, much like an app that sounds like T
 your data with China but you still want to understand what your friends are referencing. This is the app for you. Create 
 a profile, following hashtags and other users, update your own profile with a bio, instagram link or a personal url.
 
-##Getting Started
+## Getting Started
 To run this project on your local machine, fork and clone the [client](https://github.com/anthonygregis/uphoria-client) 
 and [backend](https://github.com/anthonygregis/uphoria-backend) repos from github. Install all dependencies by running
- `npm i` in the project directory terminal. Create a .env file to keep your APP_SECRET and MONGO_URI.````````
+ `npm i` in the project directory terminal. Create a .env file to keep your APP_SECRET, MONGO_URI, CLOUDINARY_SECRET 
+ CLOUDINARY_KEY and CLOUDINARY_NAME. Make sure you are using Node version 12; check by running `node -v` in your terminal. 
+ If you're running something higher than 12.18.3 then run `nvm use 12` in your terminal to use the correct version. 
+ 
+ ### Erd & Wireframe
+ 
+ [ERD](https://app.lucidchart.com/documents/edit/d6c23495-cdc7-4958-a05b-f4d7aaa90dbc/0_0?shared=true).
+ 
+ ![Wire Frame 1](https://i.imgur.com/iO6v55E.png)
+ ![Wire Frame 2](https://i.imgur.com/mqXkyYd.png)
 
 ### Tech Stack
 
@@ -19,6 +28,8 @@ and [backend](https://github.com/anthonygregis/uphoria-backend) repos from githu
 * GraphQL
 * Apollo
 * Material UI
+* Cloudinary
+* Bcrypt
 
 ### Style Guide
 
@@ -36,13 +47,48 @@ and [backend](https://github.com/anthonygregis/uphoria-backend) repos from githu
 
 ### Import Code Snippets
 
+```javascript
+const resolver = {
+	Query: {
+		user: {
+			description: "Returns a user based off their ID",
+			resolve: async (_, {id, ...args}, context) => {
+				console.log("User route hit")
+				if (!args.privilegedSecret) {
+					args.privilegedSecret = ""
+				}
+				const foundUser = await db.User.findById(id).populate({ path: "videos", options: { sort: { 'createdAt': -1 } } })
 
-### Erd & Wireframe
+				console.log(foundUser)
+				if (args.privilegedSecret !== "antiTikTok") {
+					foundUser.email = "Not Authorized"
+					foundUser.birthday = "Not Authorized"
+				}
+				return foundUser
+			}
+		}
+    }
+}
+```
 
-[ERD](https://app.lucidchart.com/documents/edit/d6c23495-cdc7-4958-a05b-f4d7aaa90dbc/0_0?shared=true).
+```javascript
+const typeDefs = gql`  
+type User {
+    id: ID!
+    username: String!
+    email: String
+    password: String!
+    name: String!
+    birthday: Date
+    profile: Profile!
+    followingUsers: [ID!]!
+    videos: [Video!]!
+  }
+`
+```
 
-![Wire Frame 1](https://i.imgur.com/iO6v55E.png)
-![Wire Frame 2](https://i.imgur.com/mqXkyYd.png)
+
+
 
 
 # Models
@@ -86,6 +132,14 @@ and [backend](https://github.com/anthonygregis/uphoria-backend) repos from githu
 | updatedAt | Date | Auto-generated |
 
 ### Routes
+
+| Route Name |  Notes |
+| ---------------  | ------------------------------ |
+| / |  Home route, protected |
+| /auth  | Auth route with register and login |
+| /profile  | User profile, protected |
+| /create  | Upload videos |
+| /edit  | Edit user profile, protected |
 
 
 

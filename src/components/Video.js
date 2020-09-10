@@ -24,7 +24,7 @@ const Video = (props) => {
     }
 
     const handleUnmute = () => {
-      console.log('scrolling')
+      setMuted(true)
     }
 
     return (
@@ -48,7 +48,7 @@ const Video = (props) => {
             autoPlay
             muted={muted}
             onClick={handleMute}
-            onScroll={handleUnmute}
+            onTouchEnd={handleUnmute}
           />
         </div>
       </div>

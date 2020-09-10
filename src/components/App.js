@@ -9,7 +9,7 @@ import Profile from "./Profile/Profile"
 import ProfileEdit from "./Profile/ProfileEdit"
 import Auth from "./Auth/Auth"
 import Upload from "./Upload/Upload"
-import Loading from "./Loading/Loading"
+// import Loading from "./Loading/Loading"
 import Error from "./Error"
 
 const App = () => {
@@ -68,7 +68,7 @@ const App = () => {
           path="/create"
           render={() => <Upload userId={currentUser._id} />}
         />
-        <Route path="/edit" render={(props) => <ProfileEdit {...props} />} />
+        <Route path="/edit" render={(props) => <ProfileEdit {...props} handleLogout={handleLogout}/>} />
         <Route path="*" component={Error} />
       </Switch>
       <BottomNav />

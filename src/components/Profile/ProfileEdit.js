@@ -180,11 +180,15 @@ const ProfileEdit = (props) => {
         variables={{  id: userId }}
         onCompleted={(data) => confirm(data)}>
         {(mutation) => {
+          const handleDelete = async () => {
+           await mutation()
+            props.handleLogout()
+          }
           return (
             <button
               type="submit"
               className="btn float-right"
-              onClick={mutation}>
+              onClick={handleDelete}>
               Delete Account
             </button>
           )

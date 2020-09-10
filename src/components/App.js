@@ -68,7 +68,7 @@ const App = () => {
           path="/create"
           render={() => <Upload userId={currentUser._id} />}
         />
-        <Route path="/edit" render={() => <ProfileEdit userId={currentUser._id}/>} />
+        <Route path="/edit" render={(props) => <ProfileEdit {...props} />} />
         <Route path="*" component={Error} />
       </Switch>
       <BottomNav />

@@ -8,7 +8,7 @@ const ProfileButton = (props) => {
 
   return (
     <>
-      <Link to="/edit">
+      <Link to={{ pathname:"/edit", user: props.user}}>
         <IconButton>
           <SettingsIcon />
         </IconButton>

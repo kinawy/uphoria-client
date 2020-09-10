@@ -24,48 +24,44 @@ const useStyles = makeStyles((theme) => ({
 const ProfileEdit = (props) => {
   const classes = useStyles()
 
-  const [username, setUsername] = useState("")
-  const [email, setEmail] = useState("")
-  const [name, setName] = useState("")
-  const [birthday, setBirthday] = useState("")
+  const [username, setUsername] = useState(props.location.user.username)
+  const [email, setEmail] = useState(props.location.user.email)
+  const [name, setName] = useState(props.location.user.name)
+  const [birthday, setBirthday] = useState(props.location.user.birthday)
   const [redirect, setRedirect] = useState(false)
-  const [profile, setProfile] = useState({})
+  const [bio, setBio] = useState(props.location.user.profile.bio)
+  const [instagramUrl, setInstagramUrl] = useState(
+    props.location.user.profile.instagramUrl
+  )
+  const [personalUrl, setPersonalUrl] = useState(
+    props.location.user.profile.personalUrl
+  )
 
-  let editData = { username, email, name, birthday, profile }
+  let userId = props.location.user.id
+  let profile = { bio, instagramUrl, personalUrl }
+  let editData = { username, email, name, birthday, userId }
 
-  let userId = props.userId
-
-//   if (!props.user) return <Redirect to="/auth" />
-
-//   if (!props.location.userId) {
-//     let token = jwt_decode(localStorage.getItem(AUTH_TOKEN))
-//     userId = token._id
-//   } else {
-//     userId = props.location.userId
-//   }
+  if (!props.location.user) return <Redirect to="/" />
 
   const UPDATE_USER_MUTATION = gql`
-    input Profile {
-      bio: String!
-      instagramUrl: String!
-      personalUrl: String!
-    }
     mutation UpdateUser(
       $id: ID!
       $username: String!
       $email: String!
       $name: String!
       $birthday: Date!
-      $profile: Profile!
+      $profile: userProfile!
     ) {
       updateUser(
         id: $id
         username: $username
         email: $email
-        password: $password
         name: $name
         birthday: $birthday
-      )
+        profile: $profile
+      ) {
+        id
+      }
     }
   `
   let handleSubmit = (e) => {
@@ -77,10 +73,8 @@ const ProfileEdit = (props) => {
       setRedirect(true)
     }
   }
-  if (redirect) return <Redirect to="/auth" />
+  if (redirect) return <Redirect to="/" />
 
-  console.log(props)
-  console.log(profile)
   return (
     <div className="edit-form">
       <h5>Edit your account below:</h5>
@@ -121,30 +115,48 @@ const ProfileEdit = (props) => {
             id="standard-number"
             placeholder="Birthdate"
             type="date"
-            InputplaceholderProps={{
-              shrink: true,
-            }}
-            value={birthday}
+            value={new Date(birthday).toISOString().substr(0, 10)}
             onChange={(e) => {
               setBirthday(e.target.value)
             }}
           />
           <input
             id="standard-text-input"
+            placeholder="Your Bio"
+            type="text"
+            value={bio}
+            onChange={(e) => {
+              setBio(e.target.value)
+            }}
+          />
+          <input
+            id="standard-text-input"
             placeholder="Instagram URL"
             type="text"
-            value={profile}
+            value={instagramUrl}
             onChange={(e) => {
-                setProfile(e.target.value)
+              setInstagramUrl(e.target.value)
+            }}
+          />
+          <input
+            id="standard-text-input"
+            placeholder="Personal URL"
+            type="text"
+            value={personalUrl}
+            onChange={(e) => {
+              setPersonalUrl(e.target.value)
             }}
           />
           <Mutation
             mutation={UPDATE_USER_MUTATION}
-            variables={(editData, { id: userId })}
+            variables={(editData, profile)}
             onCompleted={(data) => confirm(data)}>
-            {() => {
+            {(mutation) => {
               return (
-                <button type="submit" className="btn float-right">
+                <button
+                  type="submit"
+                  className="btn float-right"
+                  onClick={mutation}>
                   Submit
                 </button>
               )

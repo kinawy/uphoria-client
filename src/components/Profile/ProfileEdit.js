@@ -73,7 +73,7 @@ const ProfileEdit = (props) => {
     }
   }
   if (redirect) return <Redirect to="/" />
-
+  console.log(props)
   return (
     <div className="edit-form">
       <h5>Edit your account below:</h5>

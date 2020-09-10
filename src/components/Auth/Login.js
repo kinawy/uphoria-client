@@ -87,9 +87,15 @@ const Login = (props) => {
 					onError={error => handleError(error)}
 					onCompleted={data => confirm(data)}
 				>
-					{mutation => (
-						<button type="submit" className="btn btn-primary float-right" onClick={mutation}>Submit</button>
-					)}
+					{mutation => {
+						let checkFields = () => {
+							if(email.includes("@")) {
+								mutation()
+							}
+						}
+						return (<button type="submit" className="btn btn-primary float-right" onClick={checkFields}>Submit</button>)
+					
+					}}
 				</Mutation>
 			</div>
 		</form>

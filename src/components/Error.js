@@ -4,7 +4,7 @@ import "../styles/Error.css"
 const Error = (props) => {
   return (
     <div className="errorDiv">
-      <h1>Oops!</h1>
+      <h1>Sorry,</h1>
       <h2>Something Went Wrong:</h2>
 	    <p>{props.errorMessage}</p>
     </div>

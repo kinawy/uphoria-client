@@ -43,26 +43,36 @@ const ProfileEdit = (props) => {
   if (!props.location.user) return <Redirect to="/" />
 
   const UPDATE_USER_MUTATION = gql`
-    mutation UpdateUser(
-      $id: ID!
-      $username: String!
-      $email: String!
-      $name: String!
-      $birthday: Date!
-      $profile: userProfile!
-    ) {
-      updateUser(
-        id: $id
-        username: $username
-        email: $email
-        name: $name
-        birthday: $birthday
-        profile: $profile
+      mutation UpdateUser(
+          $id: ID!
+          $username: String!
+          $email: String!
+          $name: String!
+          $birthday: Date!
+          $profile: userProfile!
       ) {
-        id
+          updateUser(
+              id: $id
+              username: $username
+              email: $email
+              name: $name
+              birthday: $birthday
+              profile: $profile
+          ) {
+              id
+          }
       }
-    }
   `
+  const DELETE_USER_MUTATION = gql`
+      mutation DeleteUser(
+          $id: ID!
+      ) {
+          deleteUser(
+              id: $id
+          )
+      }
+  `
+
   let handleSubmit = (e) => {
     e.preventDefault()
   }
@@ -72,6 +82,8 @@ const ProfileEdit = (props) => {
       setRedirect(true)
     }
   }
+
+
   if (redirect) return <Redirect to="/" />
   console.log(props)
   return (
@@ -163,6 +175,21 @@ const ProfileEdit = (props) => {
           </Mutation>
         </div>
       </form>
+      <Mutation
+        mutation={DELETE_USER_MUTATION}
+        variables={{  id: userId }}
+        onCompleted={(data) => confirm(data)}>
+        {(mutation) => {
+          return (
+            <button
+              type="submit"
+              className="btn float-right"
+              onClick={mutation}>
+              Delete Account
+            </button>
+          )
+        }}
+      </Mutation>
     </div>
   )
 }

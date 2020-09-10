@@ -7,7 +7,7 @@ import gql from "graphql-tag"
 import { Query } from "react-apollo"
 import UserInfo from "./Profile/UserInfo"
 import VideoGrid from "./Profile/VideoGrid"
-import { useSwipeable, Swipeable } from 'react-swipeable'
+// import { useSwipeable, Swipeable } from 'react-swipeable'
 import Loading from "./Loading/Loading"
 import Error from "./Error"
 

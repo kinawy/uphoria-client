@@ -1,6 +1,6 @@
 import React from "react";
 import ReactLoading from "react-loading";
-import { Section, Title, Article, Prop, list } from "./generic";
+import { Section, Prop} from "./generic";
 import '../../styles/Loading.css'
 
 const Loading = () => {

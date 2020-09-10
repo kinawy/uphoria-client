@@ -36,7 +36,7 @@ const Video = (props) => {
 
           let videos = data.videos.map((video) => {
             return (
-              <div className="Video-Container">
+              <div className="Video-Container" key={video.id}>
                 <SideBar
 	                videoId={video.id}
                   userId={video.userId.id}

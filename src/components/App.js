@@ -9,12 +9,29 @@ import Profile from "./Profile/Profile"
 import ProfileEdit from "./Profile/ProfileEdit"
 import Auth from "./Auth/Auth"
 import Upload from "./Upload/Upload"
-// import Loading from "./Loading/Loading"
+import Loading from "./Loading/Loading"
 import Error from "./Error"
+import gql from "graphql-tag"
+import { Query } from "react-apollo"
 
 const App = () => {
   let [currentUser, setCurrentUser] = useState("")
 
+  const queryVideos = gql`
+      {
+        videos {
+          id
+          description
+          userId {
+            id
+            username
+          }
+          videoUrl
+          likes
+          shares
+        }
+      }
+    `
   useEffect(() => {
     let token
     if (!localStorage.getItem(AUTH_TOKEN)) {
@@ -42,7 +59,22 @@ const App = () => {
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/" component={Video} />
+        <Route exact path="/" render={() => (
+			<Query query={queryVideos}>
+				{({ loading, error, data }) => {
+					if (loading) return <Loading />;
+					if (error) return <Error errorMessage={error.message} />;
+
+				let videos = data.videos.map((video) => {
+					return (
+						<Video video={video} />
+					)
+				})
+
+				return videos
+				}}
+			</Query>
+		)} />
         <Route
           exact
           path="/auth"

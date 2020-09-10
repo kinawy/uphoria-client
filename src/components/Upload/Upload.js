@@ -46,7 +46,7 @@ const Upload = (props) => {
 			setUploaded(true)
 		}
 	}
-
+	if (!uploaded) return <Loading />
 	if (uploaded) return <Redirect to="/profile"/>
 
 	return (

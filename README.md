@@ -47,30 +47,56 @@ and [backend](https://github.com/anthonygregis/uphoria-backend) repos from githu
 
 ### Import Code Snippets
 
+In Revolver.js 
 ```javascript
 const resolver = {
-	Query: {
-		user: {
-			description: "Returns a user based off their ID",
-			resolve: async (_, {id, ...args}, context) => {
-				console.log("User route hit")
-				if (!args.privilegedSecret) {
-					args.privilegedSecret = ""
-				}
-				const foundUser = await db.User.findById(id).populate({ path: "videos", options: { sort: { 'createdAt': -1 } } })
-
-				console.log(foundUser)
-				if (args.privilegedSecret !== "antiTikTok") {
-					foundUser.email = "Not Authorized"
-					foundUser.birthday = "Not Authorized"
-				}
-				return foundUser
+  Query: {
+    user: {
+      description: "Returns a user based off their ID",
+		resolve: async (_, {id, ...args}, context) => {
+          console.log("User route hit")
+			if (!args.privilegedSecret) {
+			  args.privilegedSecret = ""
 			}
-		}
+			  const foundUser = await db.User.findById(id).populate({ 
+                              path: "videos", options: { sort: { 'createdAt': -1 } } 
+                              })
+               console.log(foundUser)
+			if (args.privilegedSecret !== "antiTikTok") {
+			  foundUser.email = "Not Authorized"
+				foundUser.birthday = "Not Authorized"
+			}
+			return foundUser
+        }
+    }
+  }
+}
+```
+Creating a mutation in Resolver.js
+```javascript
+deleteUser: {
+  description: "We aren't Tik Tok",
+	resolve: async (_, {id}, context) => {
+      console.log(context.user)
+		if (!context.user) throw new Error("Protected Route, please login")
+		if (context.user._id !== id) throw new Error("You are not authorized to delete another user")
+		  await new Promise((resolve, reject) => {
+		    db.User.findByIdAndDelete(id, (err, docs) => {
+		      if (err) reject(err)
+			  else resolve(true)
+		    })
+		  })
+            return new Promise((resolve, reject) => {
+              db.Video.deleteMany({userId: id}, (err, docs) => {
+                if (err) reject(err)
+				else resolve(true)
+              })
+            })
     }
 }
 ```
 
+In typeDef.js
 ```javascript
 const typeDefs = gql`  
 type User {
@@ -86,7 +112,28 @@ type User {
   }
 `
 ```
-
+Video upload function
+```javascript
+const cloudinaryUpload = async ({stream}) => {
+  try {
+    await new Promise((resolve, reject) => {
+      const streamLoad = cloudinary.uploader.upload_stream({ resource_type: 'video' },function (error, result) {
+        if (result) {
+          publicId = result.public_id
+			resolve(publicId)
+          } else {
+            reject(error)
+          }
+        })
+          stream.pipe(streamLoad)
+    })
+  } catch (err) {
+    throw new Error(`Failed to upload uphoria video! Err:${err.message}`)
+  }
+}
+await cloudinaryUpload({stream})
+return (publicId)
+```
 
 
 

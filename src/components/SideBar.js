@@ -6,7 +6,8 @@ import "../styles/SideBar.css"
 import gql from "graphql-tag"
 import { useMutation } from "react-apollo"
 import MuteLogo from './MuteLogo'
-
+import jwt_decode from "jwt-decode"
+import { AUTH_TOKEN } from "../auth/constant"
 
 const likeVideoMutation = gql`
     mutation($id: ID!, $isLiking: Boolean!) {
@@ -24,19 +25,20 @@ const shareVideoMutation = gql`
     }
 `
 
+const token = jwt_decode(localStorage.getItem(AUTH_TOKEN))
 
 const SideBar = (props) => {
-	const [hasLiked, setHasLiked] = useState(props.likes.includes())
-	const [likes, setLikes] = useState(props.likes.length)
+	const [hasLiked, setHasLiked] = useState(props.likes.includes(token._id))
+	const [likes, setLikes] = useState(props.likes)
 	const [shares, setShares] = useState(props.shares)
 	const [updateLikes] = useMutation(likeVideoMutation)
   const [updateShares] = useMutation(shareVideoMutation)
-  
+  console.log('this hits', hasLiked)
 
 	const handleLike = async () => {
 		const likingVideo = await updateLikes({ variables: { id: props.videoId, isLiking: true } })
 		let newLikes = likingVideo.data.updateVideo.likes.length
-		if (newLikes> likes) setLikes(newLikes)
+		if (newLikes> likes.length) setLikes(newLikes)
 		else console.log("Failed to like video")
 	}
 

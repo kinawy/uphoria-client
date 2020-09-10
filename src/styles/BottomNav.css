@@ -1,6 +1,17 @@
 .btm-nav {
-    background-color: #d69ff1;
     left: 50%;
     width: 375px;
     z-index: 10;
+}
+
+.MuiBottomNavigation-root {
+    background: #736f72 !important;
+}
+
+.MuiBottomNavigationAction-root.Mui-selected {
+    color: #36064c;
+}
+
+.Mui-selected {
+    color: #36064c;
 }

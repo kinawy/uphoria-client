@@ -1,7 +1,23 @@
 .header-tab {
-    background-color: transparent;
     width: 100%;
     z-index: 100;
     top: 0;
     position: fixed;
+}
+
+button:focus {
+    outline: none;
+    background-color: transparent !important;
+}
+
+.MuiTab-textColorPrimary.Mui-selected, .MuiTouchRipple-root {
+    color: #36064c !important;
+}
+
+.PrivateTabIndicator-colorPrimary-2 {
+    background-color: #36064c !important;
+}
+
+.MuiTab-wrapper {
+    text-shadow: .5px .5px .5px #736f72 !important;
 }

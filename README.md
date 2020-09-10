@@ -15,7 +15,9 @@ To run uphoria_backend, type `nodemon` or `node index.js` into your terminal.<br
 Run `npm start` in uphoria_client to access your frontend.<br>
  
  # About the project
- As a team we wanted to create something that would be fun and safe.
+This app was created for creative individuals who want to share videos without giving their private data away. As a team,
+we wanted to connect users without using them for our own gain. Uphoria is about sharing what makes you happy and creating 
+positive feeds.
  
  ### Erd & Wireframe
  

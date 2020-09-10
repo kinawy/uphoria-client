@@ -11,10 +11,12 @@ import { AUTH_TOKEN } from "../../auth/constant"
 import Error from "../Error"
 import Logout from "../Logout/Logout"
 
+
 const Profile = (props) => {
+  console.log(props)
+
   let userId = ""
   let queryUserInfo
-
   if (!props.user) return <Redirect to="/auth" />
 
   if (!props.location.userId) {
@@ -62,13 +64,14 @@ const Profile = (props) => {
 
   return (
     <div className="profile-display">
-      <Query query={queryUserInfo} variables={{ id: userId }}>
-        {({ loading, error, data }) => {
+      <Query query={queryUserInfo} variables={{ id: userId }} fetchPolicy="no-cache">
+        {({ loading, error, data, refetch }) => {
           if (loading) return <Loading />
           if (error) {
             console.log(error.message)
             return <Error errorMessage={"Sorry, there's been an error."} />
           }
+          if (props.location.triggerRefetch) refetch()
           return (
             <>
               <Logout handleLogout={props.handleLogout} />
@@ -84,3 +87,4 @@ const Profile = (props) => {
 }
 
 export default Profile
+

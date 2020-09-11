@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom"
 import { Mutation } from "react-apollo"
 import "../../styles/Upload.css"
 import logo from "../../assets/logo.png" // import logo image here
-import Loading from "../Loading/Loading"
+import Spinner from "../Spinner/Spinner"
 import Error from "../Error"
 
 const Upload = (props) => {
@@ -50,7 +50,7 @@ const Upload = (props) => {
   }
 
 
-  if (loading) return <Loading/>
+  if (loading) return <Spinner/>
   if (uploaded) return <Redirect to={{
     pathname: "/profile",
     triggerRefetch: true

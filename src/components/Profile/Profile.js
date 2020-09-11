@@ -17,7 +17,7 @@ const Profile = (props) => {
   if (!props.user) return <Redirect to="/auth" />
 
   if (!props.location.userId) {
-    userId = props.currentUser._id
+    userId = props.user._id
     queryUserInfo = gql`
       query User($id: ID!) {
         user(id: $id, privilegedSecret: "antiTikTok") {

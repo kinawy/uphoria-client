@@ -46,7 +46,7 @@ positive feeds. We don't believe in data collection, and we hide your personal i
 
 ## GraphQL
 Access your GraphQL playground by typing "http://localhost:4000/graphql" into your browser while your backend application is
-running. Here you can play around with the querying syntax of GraphQL and see the exact formation that the data is stored in.
+running. Here you can play around with the querying syntax of GraphQL and check the docs to see the exact formation that the data is stored in. The docs also contains all available mutations and queries, also what they require to fire off.
 ### Returning all users in database with specifics
 ![graphql](https://i.imgur.com/PnwWTMC.png)
 ### Returning a single user based on user id
@@ -56,7 +56,7 @@ running. Here you can play around with the querying syntax of GraphQL and see th
 
 ## Import Code Snippets
 
-In Revolver.js 
+In Revolver.js, this Query for user first checks for the permission to return a users information, if not using our privileged secret you can't just scrape any data because it simply will not render, not to mention the query changes on the front end by checking privileged user. This query also takes mind to organize the users videos by createdAt in a descending order. This allows us to render the users profile by newest!
 ```javascript
 const resolver = {
   Query: {
@@ -106,7 +106,7 @@ deleteUser: {
     }
 }
 ```
-Also in our revolver, this code is our mutation query for deleting a user.
+Also in our revolver, this code is our mutation query for deleting a user. Here you can see it deletes the entire user by checking the context user id, then checking for an error, if none, deletes the user, then chains another promise that also deletes the users videos.
 
 In typeDef.js
 ```javascript
@@ -124,8 +124,9 @@ type User {
   }
 `
 ```
-GraphQL requires type definitions. This is our User type. 
+GraphQL requires type definitions. This is our User type. As you can see for video, instead of returning a type for videos, it returns the Video Model Array.
 
+This one was interesting, but really quite straightforward, when we hunkered down to figure this out, we thought it would be some massive undertaking, it ended up taking all of maybe an hour. 
 Video upload function
 ```javascript
 const cloudinaryUpload = async ({stream}) => {
@@ -180,7 +181,7 @@ This uses the cloudinary package to access it's uploader functionality, where th
 | createdAt | Date | Auto-generated |
 | updatedAt | Date | Auto-generated |
 
-### Profile Model
+### Profile Object inside User
 
 | Column Name | Data Type | Notes |
 | --------------- | ------------- | ------------------------------ |
@@ -191,7 +192,7 @@ This uses the cloudinary package to access it's uploader functionality, where th
 | updatedAt | Date | Auto-generated |
 
 
-### Videos Model
+### Videos Model (Embedded in User)
 
 | Column Name | Data Type | Notes |
 | --------------- | ------------- | ------------------------------ |
@@ -237,5 +238,5 @@ up correctly, and writing the proper queries for the frontend. We felt confident
 that Monday night. Auth was working, routes were running, and things were coming along. Sometimes our CSS would disappear 
 after a commit but who doesn't have a goblin living in their computer and eating code when no one is looking. We were 
 young, wild, free, and cocky. On Thursday our Git Master experienced a terrible tragedy when his computer lost its battle 
-with a kitten. This set us back a good and fast man. In the end though, even without all of our stretch goals uo and running,
-we still have a pretty nice app 😌
+with a kitten named El Humidor. This set us back a good and fast man. In the end though, even without all of our stretch goals uo and running,
+we still have a pretty nice app 😌 .

@@ -12,7 +12,7 @@ const Likes = (props) => {
   useEffect(() => {
     if (props.likes.includes(props.userId)) setColor("secondary")
     else setColor("default")
-  }, [props.likes])
+  }, [props.userId, props.likes])
 
   return (
     <div className="like-btn">

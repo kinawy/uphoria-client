@@ -12,7 +12,6 @@ import Error from "../Error"
 import Logout from "../Logout/Logout"
 
 const Profile = (props) => {
-  console.log(props)
 
   let userId = ""
   let queryUserInfo

@@ -4,7 +4,6 @@ import IconButton from "@material-ui/core/IconButton"
 import SettingsIcon from "@material-ui/icons/Settings"
 
 const ProfileButton = (props) => {
-  console.log(props)
 
   return (
     <>

@@ -11,7 +11,6 @@ import { AUTH_TOKEN } from "../../auth/constant"
 import Error from "../Error"
 import Logout from "../Logout/Logout"
 
-
 const Profile = (props) => {
   console.log(props)
 
@@ -64,7 +63,10 @@ const Profile = (props) => {
 
   return (
     <div className="profile-display">
-      <Query query={queryUserInfo} variables={{ id: userId }} fetchPolicy="no-cache">
+      <Query
+        query={queryUserInfo}
+        variables={{ id: userId }}
+        fetchPolicy="no-cache">
         {({ loading, error, data, refetch }) => {
           if (loading) return <Loading />
           if (error) {
@@ -76,7 +78,6 @@ const Profile = (props) => {
             <>
               <Logout handleLogout={props.handleLogout} />
               <UserInfo user={{ ...data.user }} />
-
               <VideoGrid videos={data.user.videos} />
             </>
           )
@@ -87,4 +88,3 @@ const Profile = (props) => {
 }
 
 export default Profile
-

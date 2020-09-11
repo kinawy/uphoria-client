@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "react-router-dom"
 import { makeStyles } from "@material-ui/core/styles"
 import Icon from "@material-ui/core/Icon"
 import ProfileButton from "./ProfileButton"
@@ -26,22 +25,23 @@ const UserInfo = (props) => {
       <img
         src="https://rb.gy/yecyjb"
         className="circle responsive-image userImage"
+        alt="user-pic"
       />
       <br />
       {/* could be edit or follow/unfollow button depending on user*/}
       <ProfileButton user={props.user} />
       <p>{props.user.profile.bio}</p>
       <p className="ig-url">
-        <a href={ props.user.profile.instagramUrl } target="_blank">
+        <a href={ props.user.profile.instagramUrl } target="_blank" rel="noopener noreferrer">
           <Icon classes={{ root: classes.iconRoot }}>
-            <img className={classes.imageIcon} src={InstaIcon} />
+            <img className={classes.imageIcon} src={InstaIcon} alt="instagram-icon"/>
           </Icon>{" "}
           {props.user.profile.instagramUrl}
         </a>
       </p>
-      <a href={ props.user.profile.personalUrl } target="_blank">
+      <a href={ props.user.profile.personalUrl } target="_blank" rel="noopener noreferrer">
         <Icon classes={{ root: classes.iconRoot }}>
-          <img className={classes.imageIcon} src={LinkIcon} />
+          <img alt="link-icon" className={classes.imageIcon} src={LinkIcon} />
         </Icon>{" "}
         {props.user.profile.personalUrl}
       </a>

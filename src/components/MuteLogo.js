@@ -17,7 +17,7 @@ const MuteLogo = (props) => {
 
     return (
         <div>
-            <img src={logo} onClick={props.handleMute} className="muteLogo"/>
+            <img src={logo} onClick={props.handleMute} className="muteLogo" alt="mute/unmute"/>
         </div>
     )
 }

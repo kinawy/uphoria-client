@@ -2,8 +2,6 @@ import React, { useState } from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import { Redirect } from "react-router-dom"
 import { Mutation } from "react-apollo"
-import jwt_decode from "jwt-decode"
-import { AUTH_TOKEN } from "../../auth/constant"
 import gql from "graphql-tag"
 
 const useStyles = makeStyles((theme) => ({

@@ -10,6 +10,7 @@ import jwt_decode from "jwt-decode"
 import { AUTH_TOKEN } from "../../auth/constant"
 import Error from "../Error"
 import Logout from "../Logout/Logout"
+import Spinner from "../Spinner/Spinner"
 
 
 const Profile = (props) => {
@@ -66,7 +67,7 @@ const Profile = (props) => {
     <div className="profile-display">
       <Query query={queryUserInfo} variables={{ id: userId }} fetchPolicy="no-cache">
         {({ loading, error, data, refetch }) => {
-          if (loading) return <Loading />
+          if (loading) return <Spinner />
           if (error) {
             console.log(error.message)
             return <Error errorMessage={"Sorry, there's been an error."} />

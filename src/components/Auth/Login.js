@@ -5,6 +5,7 @@ import jwt_decode from "jwt-decode"
 import {AUTH_TOKEN} from "../../auth/constant"
 import {makeStyles} from "@material-ui/core/styles"
 import Error from "../Error"
+import Spinner from "../Spinner/Spinner"
 
 const useStyles = makeStyles((theme) => ({
 	root: {

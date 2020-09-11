@@ -13,6 +13,7 @@ import Loading from "./Loading/Loading"
 import Error from "./Error"
 import gql from "graphql-tag"
 import { Query } from "react-apollo"
+import Spinner from "./Spinner/Spinner"
 
 const App = (props) => {
   let [currentUser, setCurrentUser] = useState("")
@@ -62,7 +63,7 @@ const App = (props) => {
         <Route exact path="/" render={() => (
 			<Query query={queryVideos} fetchPolicy="no-cache">
 				{({ loading, error, data , refetch}) => {
-					if (loading) return <Loading />;
+					if (loading) return <Spinner />;
 					if (error) return <Error errorMessage={error.message} />;
           // if (props.location.triggerRefetch) refetch()
 

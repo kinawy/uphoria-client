@@ -60,7 +60,7 @@ const Upload = (props) => {
   return (
     <div className="upload-component">
       <div className="logoDiv">
-        <img src={logo}/>
+        <img src={logo} alt="uphoria logo"/>
       </div>
       <h2>Upload your content here</h2>
       {error}

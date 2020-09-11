@@ -1,5 +1,5 @@
 import React from "react"
-import {Link, Redirect} from "react-router-dom"
+import {Link} from "react-router-dom"
 import { makeStyles } from "@material-ui/core/styles"
 import BottomNavigation from "@material-ui/core/BottomNavigation"
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction"
@@ -32,7 +32,6 @@ const BottomNav = () => {
   return (
     <div className="btm-nav">
       <BottomNavigation
-        className="real-btm-nav"
         value={value}
         onChange={(event, newValue) => {
           setValue(newValue)

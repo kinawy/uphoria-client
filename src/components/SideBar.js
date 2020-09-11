@@ -5,58 +5,64 @@ import Likes from "./Likes"
 import "../styles/SideBar.css"
 import gql from "graphql-tag"
 import { useMutation } from "react-apollo"
-import MuteLogo from './MuteLogo'
+import MuteLogo from "./MuteLogo"
 import jwt_decode from "jwt-decode"
 import { AUTH_TOKEN } from "../auth/constant"
 
 const likeVideoMutation = gql`
-    mutation($id: ID!, $isLiking: Boolean!) {
-        updateVideo(id: $id, isLiking: $isLiking) {
-            likes
-        }
+  mutation($id: ID!, $isLiking: Boolean, $isUnliking: Boolean) {
+    updateVideo(id: $id, isLiking: $isLiking, isUnliking: $isUnliking) {
+      likes
     }
+  }
 `
 
 const shareVideoMutation = gql`
-    mutation($id: ID!, $isSharing: Boolean!) {
-        updateVideo(id: $id, isSharing: $isSharing) {
-            shares
-        }
+  mutation($id: ID!, $isSharing: Boolean!) {
+    updateVideo(id: $id, isSharing: $isSharing) {
+      shares
     }
+  }
 `
 
 const token = jwt_decode(localStorage.getItem(AUTH_TOKEN))
 
 const SideBar = (props) => {
-	const [hasLiked, setHasLiked] = useState(props.likes.includes(token._id))
-	const [likes, setLikes] = useState(props.likes)
-	const [shares, setShares] = useState(props.shares)
-	const [updateLikes] = useMutation(likeVideoMutation)
+  const [likes, setLikes] = useState(props.likes)
+  const [shares, setShares] = useState(props.shares)
+  const [updateLikes] = useMutation(likeVideoMutation)
   const [updateShares] = useMutation(shareVideoMutation)
-  console.log('this hits', hasLiked)
 
-	const handleLike = async () => {
-		const likingVideo = await updateLikes({ variables: { id: props.videoId, isLiking: true } })
-		let newLikes = likingVideo.data.updateVideo.likes.length
-		if (newLikes> likes.length) setLikes(newLikes)
-		else console.log("Failed to like video")
-	}
+  const handleLike = async () => {
+    let likeVariable = likes.includes(token._id)
+      ? { id: props.videoId, isUnliking: true }
+      : { id: props.videoId, isLiking: true }
 
-	const handleShare = async () => {
-		const sharingVideo = await updateShares({ variables: { id: props.videoId, isSharing: true } })
-		let newShares = sharingVideo.data.updateVideo.shares
-		if (newShares > shares) setShares(newShares)
-		else console.log("Failed to share video")
+    updateLikes({ variables: likeVariable })
+      .then((response) => {
+        let newLikes = response.data.updateVideo.likes
+        setLikes(newLikes)
+      })
+      .catch((error) => console.log("Failed on like update: ", error))
+
   }
-  
+
+  const handleShare = async () => {
+    const sharingVideo = await updateShares({
+      variables: { id: props.videoId, isSharing: true },
+    })
+    let newShares = sharingVideo.data.updateVideo.shares
+    if (newShares > shares) setShares(newShares)
+    else console.log("Failed to share video")
+  }
 
   return (
     <div className="side-bar">
-      <VideoUserProfile userId={props.userId}/>
-      <Likes likes={likes} alreadyLiked={hasLiked} handleLike={handleLike}/>
+      <VideoUserProfile userId={props.userId} />
+      <Likes likes={likes} handleLike={handleLike} userId={token._id} />
       {/*<Comments/>*/}
-      <Shares shares={shares} handleShare={handleShare}/>
-      <MuteLogo muted={props.muted} handleMute={props.handleMute}/>
+      <Shares shares={shares} handleShare={handleShare} />
+      <MuteLogo muted={props.muted} handleMute={props.handleMute} />
     </div>
   )
 }

@@ -3,13 +3,6 @@ import VideoFooter from "./VideoFooter"
 import "../styles/Video.css"
 import SideBar from "./SideBar"
 import TopNav from "./TopNav/TopNav"
-import gql from "graphql-tag"
-import { Query } from "react-apollo"
-import UserInfo from "./Profile/UserInfo"
-import VideoGrid from "./Profile/VideoGrid"
-// import { useSwipeable, Swipeable } from 'react-swipeable'
-import Loading from "./Loading/Loading"
-import Error from "./Error"
 
 const Video = (props) => {
   let [muted, setMuted] = useState(true)

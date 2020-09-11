@@ -21,7 +21,7 @@ const Auth = (props) => {
 	return (
 		<div className="auth-page">
 			<div className="logoDiv">
-				<img src={logo} />
+				<img src={logo} alt="logo"/>
 			</div>
 			<div className="authFormDiv">
 				<div className="btn-group">

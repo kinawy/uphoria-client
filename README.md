@@ -1,3 +1,5 @@
+![MIC? False](./src/assets/MIC.svg) ![Open Source](./src/assets/OS.svg)
+
 # Welcome to Uphoria
 
 This is a place to share short form content, much like an app that sounds like TipTop. Maybe you don't want to share all 
@@ -219,6 +221,14 @@ This uses the cloudinary package to access it's uploader functionality, where th
 - [ ] Use audio has a seperate entity
 - [ ] Admin and Moderation levels
 - [ ] Browser version
+
+<hr />
+
+[Hooked on a feeling / Send it](https://giphy.com/gifs/office-chair-dabs-bXvwCQglnTGKs)
+
+<iframe src="https://giphy.com/embed/bXvwCQglnTGKs" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/office-chair-dabs-bXvwCQglnTGKs">via GIPHY</a></p>
+
+[HOW YOU SHOULD WRITE YOUR NEXT README.md](https://blog.bitsrc.io/how-to-write-beautiful-and-meaningful-readme-md-for-your-next-project-897045e3f991)
 
 ### a moment of hubris
 The initial working period for this project was Friday the 4th to Friday the 11th. This group hit the ground running 

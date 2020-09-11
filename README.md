@@ -2,24 +2,24 @@
 
 This is a place to share short form content, much like an app that sounds like TipTop. Maybe you don't want to share all 
 your data with China but you still want to understand what your friends are referencing. This is the app for you. Create 
-a profile, following hashtags and other users, update your own profile with a bio, instagram link or a personal url.
+a profile, update your own profile with a bio, instagram link or a personal url, and upload videos to your profile.
 
 ## Getting Started
 To run this project on your local machine, fork and clone the [client](https://github.com/anthonygregis/uphoria-client) 
 and [backend](https://github.com/anthonygregis/uphoria-backend) repos from github. <br>
 Install all dependencies by running `npm i` in the project directory terminal. <br>
 Create a .env file to keep your APP_SECRET, MONGO_URI, CLOUDINARY_SECRET, CLOUDINARY_KEY and CLOUDINARY_NAME.<br> 
-Make sure you are using Node version 12; check by running `node -v` in your terminal. <br>
-If you're running something higher than 12.18.3 then run `nvm use 12` in your terminal to use the correct version. <br>
+Make sure you are using Node version 12; check by running `node -v` in your terminal. If you're running something higher than 12.18.3 then run `nvm use 12` in your terminal to use the correct version. <br>
 To run uphoria_backend, type `nodemon` or `node index.js` into your terminal.<br>
-Run `npm start` in uphoria_client to access your frontend.<br>
+Run `npm start` in uphoria_client to start your frontend.<br>
  
  # About the project
 This app was created for creative individuals who want to share videos without giving their private data away. As a team,
 we wanted to connect users without using them for our own gain. Uphoria is about sharing what makes you happy and creating 
-positive feeds.
+positive feeds. We don't believe in data collection, and we hide your personal information from any potential scraping. 
+
  
- ### Erd & Wireframe
+ ### Erd | Wireframes | Color Pallet
  
  ![ERD](https://i.imgur.com/tlPjVXm.png)
  
@@ -79,6 +79,8 @@ const resolver = {
   }
 }
 ```
+Resolver is where our query logic goes. The above code returns a user when implemented.
+
 Creating a mutation in Resolver.js
 ```javascript
 deleteUser: {
@@ -102,6 +104,7 @@ deleteUser: {
     }
 }
 ```
+Also in our revolver, this code is our mutation query for deleting a user.
 
 In typeDef.js
 ```javascript
@@ -119,6 +122,8 @@ type User {
   }
 `
 ```
+GraphQL requires type definitions. This is our User type. 
+
 Video upload function
 ```javascript
 const cloudinaryUpload = async ({stream}) => {
@@ -141,6 +146,7 @@ const cloudinaryUpload = async ({stream}) => {
 await cloudinaryUpload({stream})
 return (publicId)
 ```
+This uses the cloudinary package to access it's uploader functionality, where the user passes resource type "video"
 
 ### Tech Stack
 
@@ -205,16 +211,21 @@ return (publicId)
 | /create  | Upload videos |
 | /edit  | Edit user profile, protected |
 
+# Future updates to project
 
+- [ ] Add comments to videos
+- [ ] Follow Users/Hashtags
+- [ ] Search Users/Hashtags
+- [ ] Use audio has a seperate entity
+- [ ] Admin and Moderation levels
+- [ ] Browser version
 
-
-### Sample Text
-
-Title (A Title Image too if possible…Edit them on canva.com if you are not a graphic designer.)
-Description(Describe by words and images alike)
-Demo(Images, Video links, Live Demo links)
-Technologies Used
-Special Gotchas of your projects (Problems you faced, unique elements of your project)
-Technical Description of your project like- Installation, Setup, How to contribute.
-
-https://blog.bitsrc.io/how-to-write-beautiful-and-meaningful-readme-md-for-your-next-project-897045e3f991
+### a moment of hubris
+The initial working period for this project was Friday the 4th to Friday the 11th. This group hit the ground running 
+as soon as teams were announced. The first weekend we accomplished 80% of the Material UI layout, getting GraphQL built 
+up correctly, and writing the proper queries for the frontend. We felt confident in reaching MVP of just photo uploaded by
+that Monday night. Auth was working, routes were running, and things were coming along. Sometimes our CSS would disappear 
+after a commit but who doesn't have a goblin living in their computer and eating code when no one is looking. We were 
+young, wild, free, and cocky. On Thursday our Git Master experienced a terrible tragedy when his computer lost its battle 
+with a kitten. This set us back a good and fast man. In the end though, even without all of our stretch goals uo and running,
+we still have a pretty nice app 😌

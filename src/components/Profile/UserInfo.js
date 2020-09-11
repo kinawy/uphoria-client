@@ -32,14 +32,14 @@ const UserInfo = (props) => {
       <ProfileButton user={props.user} />
       <p>{props.user.profile.bio}</p>
       <p className="ig-url">
-        <a href={ props.user.profile.instagramUrl }>
+        <a href={ props.user.profile.instagramUrl } target="_blank">
           <Icon classes={{ root: classes.iconRoot }}>
             <img className={classes.imageIcon} src={InstaIcon} />
           </Icon>{" "}
           {props.user.profile.instagramUrl}
         </a>
       </p>
-      <a href={ props.user.profile.personalUrl }>
+      <a href={ props.user.profile.personalUrl } target="_blank">
         <Icon classes={{ root: classes.iconRoot }}>
           <img className={classes.imageIcon} src={LinkIcon} />
         </Icon>{" "}

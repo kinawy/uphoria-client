@@ -1,5 +1,5 @@
 .videos {
-    background-color: black;
+    /* background-color: black; */
     width: auto;
     padding-bottom: 9.9vh;
 }
@@ -7,7 +7,7 @@
 .Video-Container {
     position: relative;
     height: 93vh;
-    overflow: scroll;
+    overflow: hidden;
     scroll-snap-type: y mandatory;
     scroll-snap-align: start;
 }

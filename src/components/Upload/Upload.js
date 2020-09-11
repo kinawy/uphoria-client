@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import gql from "graphql-tag"
-import {Redirect} from "react-router-dom"
-import {Mutation} from "react-apollo"
+import { Redirect } from "react-router-dom"
+import { Mutation } from "react-apollo"
 import "../../styles/Upload.css"
 import logo from "../../assets/logo.png" // import logo image here
 import Loading from "../Loading/Loading"
@@ -65,7 +65,6 @@ const Upload = (props) => {
       <h2>Upload your content here</h2>
       {error}
       <form noValidate autoComplete="off" onSubmit={handleSubmit}>
-
         <input type="text" name="description" value={description} onChange={(e) => {
           setDescription(e.target.value)
         }} placeholder="write your description"/>
@@ -93,6 +92,4 @@ const Upload = (props) => {
   )
 }
 
-
 export default Upload
-

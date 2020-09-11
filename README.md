@@ -250,10 +250,10 @@ Anthony Gregis - GitMaster/ Master and Commander of all things Code.
 <br>Sameh Kinawy - Apollo/ Jack of all trades, master of none
 [Sameh Kinawy Github](https://github.com/kinawy)
 
+![send it](https://media.giphy.com/media/bXvwCQglnTGKs/giphy.gif)
+
 ### resources for readme
 
 [Hooked on a feeling / Send it](https://giphy.com/gifs/office-chair-dabs-bXvwCQglnTGKs)
-
-<iframe src="https://giphy.com/embed/bXvwCQglnTGKs" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/office-chair-dabs-bXvwCQglnTGKs">via GIPHY</a></p>
 
 [HOW YOU SHOULD WRITE YOUR NEXT README.md](https://blog.bitsrc.io/how-to-write-beautiful-and-meaningful-readme-md-for-your-next-project-897045e3f991)

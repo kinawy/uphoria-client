@@ -33,7 +33,6 @@ const SideBar = (props) => {
 	const [shares, setShares] = useState(props.shares)
 	const [updateLikes] = useMutation(likeVideoMutation)
   const [updateShares] = useMutation(shareVideoMutation)
-  console.log('this hits', hasLiked)
 
 	const handleLike = async () => {
 		const likingVideo = await updateLikes({ variables: { id: props.videoId, isLiking: true } })

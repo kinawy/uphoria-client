@@ -5,7 +5,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite"
 
 const Likes = (props) => {
   const [color, setColor] = useState(props.alreadyLiked ? "secondary" : "default")
-  console.log(color)
+
   const toggleClick = (e) => {
   	props.handleLike()
     if (e.target.color === "secondary") {

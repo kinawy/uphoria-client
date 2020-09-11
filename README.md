@@ -225,12 +225,6 @@ This uses the cloudinary package to access it's uploader functionality, where th
 
 <hr />
 
-[Hooked on a feeling / Send it](https://giphy.com/gifs/office-chair-dabs-bXvwCQglnTGKs)
-
-<iframe src="https://giphy.com/embed/bXvwCQglnTGKs" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/office-chair-dabs-bXvwCQglnTGKs">via GIPHY</a></p>
-
-[HOW YOU SHOULD WRITE YOUR NEXT README.md](https://blog.bitsrc.io/how-to-write-beautiful-and-meaningful-readme-md-for-your-next-project-897045e3f991)
-
 ### a moment of hubris
 The initial working period for this project was Friday the 4th to Friday the 11th. This group hit the ground running 
 as soon as teams were announced. The first weekend we accomplished 80% of the Material UI layout, getting GraphQL built 
@@ -240,3 +234,22 @@ after a commit but who doesn't have a goblin living in their computer and eating
 young, wild, free, and cocky. On Thursday our Git Master experienced a terrible tragedy when his computer lost its battle 
 with a kitten named El Humidor. This set us back a good and fast man. In the end though, even without all of our stretch goals uo and running,
 we still have a pretty nice app 😌 .
+
+## Created by:
+
+Anthony Gregis - GitMaster/ Master and Commander of all things Code.
+[Anthony Gregis Github](https://github.com/anthonygregis)
+<br>Han - React/ Backend/ CSS Ninja
+[Han, she was never given a last names's Github](https://github.com/iwasnevergivenaname)
+<br>Subrata Roy- React/ Component Guru
+[Subrata Roy Github](https://github.com/subrataroy321)
+<br>Sameh Kinawy - Apollo/ Jack of all trades, master of none
+[Sameh Kinawy Github](https://github.com/kinawy)
+
+### resources for readme
+
+[Hooked on a feeling / Send it](https://giphy.com/gifs/office-chair-dabs-bXvwCQglnTGKs)
+
+<iframe src="https://giphy.com/embed/bXvwCQglnTGKs" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/office-chair-dabs-bXvwCQglnTGKs">via GIPHY</a></p>
+
+[HOW YOU SHOULD WRITE YOUR NEXT README.md](https://blog.bitsrc.io/how-to-write-beautiful-and-meaningful-readme-md-for-your-next-project-897045e3f991)

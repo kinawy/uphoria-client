@@ -6,6 +6,8 @@ This is a place to share short form content, much like an app that sounds like T
 your data with China but you still want to understand what your friends are referencing. This is the app for you. Create 
 a profile, update your own profile with a bio, instagram link or a personal url, and upload videos to your profile.
 
+[Checkout our deployed version here](https://uphoria.herokuapp.com/)
+
 ## Getting Started
 To run this project on your local machine, fork and clone the [client](https://github.com/anthonygregis/uphoria-client) 
 and [backend](https://github.com/anthonygregis/uphoria-backend) repos from github. <br>
@@ -28,6 +30,8 @@ positive feeds. We don't believe in data collection, and we hide your personal i
  ![Wire Frame 1](https://i.imgur.com/BDTm53Y.png)
 
 ![color pallet](https://i.imgur.com/g12fs9F.png=50)
+
+![screenshot](https://i.imgur.com/ZZBndOO.png)
 
 ### Style Guide
 

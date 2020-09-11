@@ -1,1 +1,1 @@
-export const AUTH_TOKEN = "uphoriaToken"
+export const AUTH_TOKEN = "uphoriaHeroku"

@@ -1,4 +1,4 @@
-# Welcome to Uphroia
+# Welcome to Uphoria
 
 This is a place to share short form content, much like an app that sounds like TipTop. Maybe you don't want to share all 
 your data with China but you still want to understand what your friends are referencing. This is the app for you. Create 

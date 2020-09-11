@@ -6,8 +6,6 @@ import "../styles/SideBar.css"
 import gql from "graphql-tag"
 import { useMutation } from "react-apollo"
 import MuteLogo from "./MuteLogo"
-import jwt_decode from "jwt-decode"
-import { AUTH_TOKEN } from "../auth/constant"
 
 const likeVideoMutation = gql`
   mutation($id: ID!, $isLiking: Boolean, $isUnliking: Boolean) {
@@ -25,8 +23,6 @@ const shareVideoMutation = gql`
   }
 `
 
-const token = jwt_decode(localStorage.getItem(AUTH_TOKEN))
-
 const SideBar = (props) => {
   const [likes, setLikes] = useState(props.likes)
   const [shares, setShares] = useState(props.shares)
@@ -34,7 +30,7 @@ const SideBar = (props) => {
   const [updateShares] = useMutation(shareVideoMutation)
 
   const handleLike = async () => {
-    let likeVariable = likes.includes(token._id)
+    let likeVariable = likes.includes(props.currentUser._id)
       ? { id: props.videoId, isUnliking: true }
       : { id: props.videoId, isLiking: true }
 
@@ -59,7 +55,7 @@ const SideBar = (props) => {
   return (
     <div className="side-bar">
       <VideoUserProfile userId={props.userId} />
-      <Likes likes={likes} handleLike={handleLike} userId={token._id} />
+      <Likes likes={likes} handleLike={handleLike} userId={props.currentUser._id} />
       {/*<Comments/>*/}
       <Shares shares={shares} handleShare={handleShare} />
       <MuteLogo muted={props.muted} handleMute={props.handleMute} />

@@ -69,7 +69,7 @@ const App = (props) => {
 
 				let videos = data.videos.map((video) => {
 					return (
-						<Video key={video.id} video={video} />
+						<Video key={video.id} video={video} currentUser={currentUser} />
 					)
 				})
 

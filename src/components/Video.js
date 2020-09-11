@@ -25,6 +25,7 @@ const Video = (props) => {
         <TopNav />
         <div className="Video-Container" key={video.id}>
           <SideBar
+            currentUser={props.currentUser}
             videoId={video.id}
             userId={video.userId.id}
             likes={video.likes}

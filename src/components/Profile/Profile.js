@@ -6,8 +6,6 @@ import gql from "graphql-tag"
 import { Query } from "react-apollo"
 import "../../styles/Profile.css"
 import Loading from "../Loading/Loading"
-import jwt_decode from "jwt-decode"
-import { AUTH_TOKEN } from "../../auth/constant"
 import Error from "../Error"
 import Logout from "../Logout/Logout"
 import Spinner from "../Spinner/Spinner"
@@ -19,8 +17,7 @@ const Profile = (props) => {
   if (!props.user) return <Redirect to="/auth" />
 
   if (!props.location.userId) {
-    let token = jwt_decode(localStorage.getItem(AUTH_TOKEN))
-    userId = token._id
+    userId = props.currentUser._id
     queryUserInfo = gql`
       query User($id: ID!) {
         user(id: $id, privilegedSecret: "antiTikTok") {

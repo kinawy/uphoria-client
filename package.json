@@ -25,10 +25,9 @@
     "tachyons-components": "^1.0.1"
   },
   "scripts": {
-    "start": "node index.js",
-    "build": "webpack -p",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
-    "heroku-postbuild": "npm run build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

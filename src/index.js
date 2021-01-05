@@ -29,7 +29,7 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
 
 // GraphQL Backend Connection
 const httpLink = createUploadLink({
-	uri: "https://uphoria-api.herokuapp.com/graphql"
+	uri: "https://uphoria-api.herokuapp.com/graphql/"
 })
 
 const authLink = setContext((_, {headers}) => {
